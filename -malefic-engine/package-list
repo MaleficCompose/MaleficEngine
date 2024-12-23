@@ -1,0 +1,24 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:xyz.malefic.compose.engine.button////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/index.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/index.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/ButtonFactory/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/-button-factory.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/border/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/border.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/colors/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/colors.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/compose.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/content.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/contentPadding/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/content-padding.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/elevation/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/elevation.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/enabled/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/enabled.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/interactionSource/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/interaction-source.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/invoke.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/onClick/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/on-click.html
+$dokka.location:xyz.malefic.compose.engine.button/ButtonFactory/shape/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.button/-button-factory/shape.html
+$dokka.location:xyz.malefic.compose.engine////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine/index.html
+$dokka.location:xyz.malefic.compose.engine//space/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp?#androidx.compose.ui.unit.Dp?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine/space.html
+$dokka.location:xyz.malefic.compose.engine/ComposableFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine/-composable-factory/index.html
+$dokka.location:xyz.malefic.compose.engine/ComposableFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine/-composable-factory/compose.html
+$dokka.location:xyz.malefic.compose.engine/ComposableFactory/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine/-composable-factory/invoke.html
+xyz.malefic.compose.engine
+xyz.malefic.compose.engine.button
