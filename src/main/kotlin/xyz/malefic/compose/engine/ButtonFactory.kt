@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine.button
+package xyz.malefic.compose.engine
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -12,10 +12,11 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
-import xyz.malefic.compose.engine.ComposableFactory
 
 /**
  * A factory class for creating customizable buttons with various properties.
+ *
+ * @constructor Rather than setting properties through the constructor, it is recommended to set them directly using `.apply` and property access syntax
  *
  * @property onClick A lambda function to be executed when the button is clicked.
  * @property modifier A [androidx.compose.ui.Modifier] for customizing the appearance and behavior of the button.
@@ -28,18 +29,18 @@ import xyz.malefic.compose.engine.ComposableFactory
  * @property contentPadding The padding values for the button's content, defaulting to [androidx.compose.material.ButtonDefaults.ContentPadding].
  * @property content A composable lambda for defining the content of the button.
  */
-class ButtonFactory : ComposableFactory {
-    var onClick: () -> Unit = {}
-    var modifier: Modifier = Modifier.Companion
-    var enabled: Boolean = true
-    var interactionSource: MutableInteractionSource? = null
-    var elevation: ButtonElevation? = null
-    var shape: Shape? = null
-    var border: BorderStroke? = null
-    var colors: ButtonColors? = null
-    var contentPadding: PaddingValues = ButtonDefaults.ContentPadding
-    var content: @Composable RowScope.() -> Unit = {}
-
+class ButtonFactory(
+    var onClick: () -> Unit = {},
+    var modifier: Modifier = Modifier.Companion,
+    var enabled: Boolean = true,
+    var interactionSource: MutableInteractionSource? = null,
+    var elevation: ButtonElevation? = null,
+    var shape: Shape? = null,
+    var border: BorderStroke? = null,
+    var colors: ButtonColors? = null,
+    var contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
+    var content: @Composable RowScope.() -> Unit = {},
+) : ComposableFactory {
     /**
      * Creates a Composable Button with customizable properties.
      *
@@ -70,6 +71,26 @@ class ButtonFactory : ComposableFactory {
             }
         }
 
+    /**
+     * Invokes the button to render the button with the configured properties.
+     *
+     * This method calls the `compose` function and executes the resulting composable lambda,
+     * effectively rendering the button with the current configuration of the ButtonFactory.
+     */
     @Composable
     override fun invoke() = compose().invoke()
+
+    /**
+     * Applies a configuration block to the ButtonFactory and then invokes the button.
+     *
+     * This method allows for modifying the ButtonFactory's properties using the provided
+     * lambda block, and subsequently renders the button with the updated configuration.
+     *
+     * @param block A lambda block to configure the ButtonFactory properties.
+     */
+    @Composable
+    fun applyAndInvoke(block: ButtonFactory.() -> Unit) {
+        block()
+        invoke()
+    }
 }

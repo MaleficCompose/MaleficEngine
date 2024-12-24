@@ -9,10 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Window
@@ -21,9 +17,7 @@ import androidx.compose.ui.window.application
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 @Preview
-fun ButtonTest() {
-    var buttonText by remember { mutableStateOf("Option 1") }
-
+fun TextTest() =
     MaterialTheme {
         Box(
             contentAlignment = Alignment.Center,
@@ -33,37 +27,26 @@ fun ButtonTest() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
             ) {
-                ButtonFactory()
+                TextFactory()
                     .apply {
-                        onClick = {
-                            buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"
-                        }
-                        content = {
-                            Text(buttonText)
-                        }
+                        text = "Text 1"
                     }.compose()
                     .space()
                     .tooltip(tooltip = {
                         Text("Hello!")
                     })
                     .invoke()
-                ButtonFactory()
+                TextFactory()
                     .applyAndInvoke {
-                        onClick = {
-                            buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"
-                        }
-                        content = {
-                            Text(buttonText)
-                        }
+                        text = "Text 2"
                     }
             }
         }
     }
-}
 
 fun main() =
     application {
-        Window(onCloseRequest = ::exitApplication, title = "Button Test") {
-            ButtonTest()
+        Window(onCloseRequest = ::exitApplication, title = "Text Test") {
+            TextTest()
         }
     }

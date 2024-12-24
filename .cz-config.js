@@ -26,7 +26,7 @@ module.exports = {
     {value: 'update', name: 'update:     Update dependencies'},
   ],
 
-  scopes: [{name: 'malefictheme'}, {name: 'themeconfig'}, {name: 'util'}],
+  scopes: [{name: 'text'}, {name: 'button'}, {name: 'util'}],
 
   usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
   allowTicketNumber: false,
