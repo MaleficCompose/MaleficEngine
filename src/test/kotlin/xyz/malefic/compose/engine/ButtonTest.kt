@@ -42,10 +42,10 @@ fun ButtonTest() {
                             Text(buttonText)
                         }
                     }.compose()
-                    .space()
                     .tooltip(tooltip = {
                         Text("Hello!")
                     })
+                    .space()
                     .invoke()
                 ButtonFactory()
                     .applyAndInvoke {
