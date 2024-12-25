@@ -76,6 +76,6 @@ $dokka.location:xyz.malefic.compose.engine.pocket//outline/kotlin.Function0[kotl
 $dokka.location:xyz.malefic.compose.engine.pocket//padding/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/padding.html
 $dokka.location:xyz.malefic.compose.engine.pocket//padding/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/padding.html
 $dokka.location:xyz.malefic.compose.engine.pocket//space/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp?#androidx.compose.ui.unit.Dp?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/space.html
-$dokka.location:xyz.malefic.compose.engine.pocket//tooltip/kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#androidx.compose.ui.Modifier#kotlin.Int#androidx.compose.foundation.TooltipPlacement/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/tooltip.html
+$dokka.location:xyz.malefic.compose.engine.pocket//tooltip/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.Modifier#kotlin.Int#androidx.compose.foundation.TooltipPlacement#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/tooltip.html
 xyz.malefic.compose.engine.factory
 xyz.malefic.compose.engine.pocket
