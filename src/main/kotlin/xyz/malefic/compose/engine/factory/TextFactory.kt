@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine
+package xyz.malefic.compose.engine.factory
 
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.Text

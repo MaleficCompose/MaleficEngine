@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine
+package xyz.malefic.compose.engine.factory
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

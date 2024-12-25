@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine
+package xyz.malefic.compose.engine.pocket
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.TooltipArea
@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
-import sun.util.calendar.CalendarUtils.mod
 
 /**
  * Centers the content of a composable function within a Box layout.

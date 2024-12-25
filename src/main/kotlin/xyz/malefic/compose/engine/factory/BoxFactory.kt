@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine
+package xyz.malefic.compose.engine.factory
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope

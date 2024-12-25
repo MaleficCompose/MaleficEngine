@@ -17,6 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import xyz.malefic.compose.engine.factory.ButtonFactory
+import xyz.malefic.compose.engine.pocket.space
+import xyz.malefic.compose.engine.pocket.tooltip
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

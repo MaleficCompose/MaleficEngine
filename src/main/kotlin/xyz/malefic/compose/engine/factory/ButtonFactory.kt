@@ -1,4 +1,4 @@
-package xyz.malefic.compose.engine
+package xyz.malefic.compose.engine.factory
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -19,14 +19,14 @@ import androidx.compose.ui.graphics.Shape
  * @constructor Rather than setting properties through the constructor, it is recommended to set them directly using `.apply` and property access syntax
  *
  * @property onClick A lambda function to be executed when the button is clicked.
- * @property modifier A [androidx.compose.ui.Modifier] for customizing the appearance and behavior of the button.
+ * @property modifier A [Modifier] for customizing the appearance and behavior of the button.
  * @property enabled A boolean indicating whether the button is enabled or disabled.
- * @property interactionSource An optional [androidx.compose.foundation.interaction.MutableInteractionSource] for handling interaction events.
- * @property elevation An optional [androidx.compose.material.ButtonElevation] for defining the button's elevation.
- * @property shape An optional [androidx.compose.ui.graphics.Shape] for defining the button's shape.
- * @property border An optional [androidx.compose.foundation.BorderStroke] for defining the button's border.
- * @property colors An optional [androidx.compose.material.ButtonColors] for defining the button's color scheme.
- * @property contentPadding The padding values for the button's content, defaulting to [androidx.compose.material.ButtonDefaults.ContentPadding].
+ * @property interactionSource An optional [MutableInteractionSource] for handling interaction events.
+ * @property elevation An optional [ButtonElevation] for defining the button's elevation.
+ * @property shape An optional [Shape] for defining the button's shape.
+ * @property border An optional [BorderStroke] for defining the button's border.
+ * @property colors An optional [ButtonColors] for defining the button's color scheme.
+ * @property contentPadding The padding values for the button's content, defaulting to [ButtonDefaults.ContentPadding].
  * @property content A composable lambda for defining the content of the button.
  */
 class ButtonFactory(
