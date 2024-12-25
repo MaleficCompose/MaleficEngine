@@ -32,7 +32,7 @@ fun TextTest() =
                     .apply {
                         text = "Text 1"
                     }.compose()
-                    .tooltip(tooltip = {
+                    .tooltip {
                         TextFactory()
                             .apply {
                                 text = "This is the tooltip of the first text component."
@@ -41,8 +41,7 @@ fun TextTest() =
                             .background()
                             .outline()
                             .invoke()
-                    })
-                    .divide()
+                    }.divide()
                     .invoke()
                 TextFactory()
                     .applyAndInvoke {

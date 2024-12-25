@@ -52,13 +52,13 @@ fun (@Composable () -> Unit).center(mod: Modifier = Modifier): @Composable () ->
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun (@Composable () -> Unit).tooltip(
-    tooltip: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     delayMillis: Int = 500,
     tooltipPlacement: TooltipPlacement =
         TooltipPlacement.CursorPoint(
             offset = DpOffset(0.dp, 16.dp),
         ),
+    tooltip: @Composable () -> Unit,
 ): @Composable () -> Unit =
     {
         TooltipArea(

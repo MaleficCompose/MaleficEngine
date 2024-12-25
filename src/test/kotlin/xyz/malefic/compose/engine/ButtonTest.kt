@@ -45,10 +45,9 @@ fun ButtonTest() {
                             Text(buttonText)
                         }
                     }.compose()
-                    .tooltip(tooltip = {
+                    .tooltip {
                         Text("Hello!")
-                    })
-                    .space()
+                    }.space()
                     .invoke()
                 ButtonFactory()
                     .applyAndInvoke {
