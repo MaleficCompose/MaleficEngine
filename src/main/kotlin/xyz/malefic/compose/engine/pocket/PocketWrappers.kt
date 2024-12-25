@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -111,5 +112,48 @@ fun (@Composable () -> Unit).outline(
     {
         Box(mod.border(width, color)) {
             this@outline()
+        }
+    }
+
+/**
+ * Applies uniform padding to a composable function.
+ *
+ * This extension function wraps a composable function in a Box with
+ * padding applied uniformly on all sides.
+ *
+ * @param all The padding to apply on all sides.
+ * @param mod A [Modifier] to be applied to the Box.
+ * @return A composable function with the specified padding applied.
+ */
+@Composable
+fun (@Composable () -> Unit).padding(
+    all: Dp,
+    mod: Modifier = Modifier,
+): @Composable () -> Unit =
+    {
+        Box(mod.padding(all)) {
+            this@padding()
+        }
+    }
+
+/**
+ * Applies uniform padding to a composable function.
+ *
+ * This extension function wraps a composable function in a Box with
+ * padding applied uniformly on all sides.
+ *
+ * @param all The padding to apply on all sides.
+ * @param mod A [Modifier] to be applied to the Box.
+ * @return A composable function with the specified padding applied.
+ */
+@Composable
+fun (@Composable () -> Unit).padding(
+    horizontal: Dp = 0.dp,
+    vertical: Dp = 0.dp,
+    mod: Modifier = Modifier,
+): @Composable () -> Unit =
+    {
+        Box(mod.padding(horizontal, vertical)) {
+            this@padding()
         }
     }

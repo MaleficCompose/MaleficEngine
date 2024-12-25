@@ -4,7 +4,6 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,6 +18,7 @@ import xyz.malefic.compose.engine.factory.TextFactory
 import xyz.malefic.compose.engine.pocket.background
 import xyz.malefic.compose.engine.pocket.divide
 import xyz.malefic.compose.engine.pocket.outline
+import xyz.malefic.compose.engine.pocket.padding
 import xyz.malefic.compose.engine.pocket.tooltip
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -37,7 +37,8 @@ fun TextTest() =
                             .apply {
                                 text = "This is the tooltip of the first text component."
                             }.compose()
-                            .background(mod = Modifier.padding(horizontal = 3.dp))
+                            .padding(horizontal = 3.dp)
+                            .background()
                             .outline()
                             .invoke()
                     })
@@ -93,6 +94,6 @@ fun TextTest2() =
 fun main() =
     application {
         Window(onCloseRequest = ::exitApplication, title = "Text Test") {
-            TextTest2()
+            TextTest()
         }
     }
