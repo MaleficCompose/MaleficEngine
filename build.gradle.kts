@@ -1,11 +1,11 @@
 import cn.lalaki.pub.BaseCentralPortalPlusExtension.PublishingType
 
-val user = "MaleficCompose"
-val repo = "MaleficEngine"
-val g = "xyz.malefic.compose"
-val artifact = "engine"
-val v = "1.0.0"
-val desc = "A Compose Desktop library wrapping Jetpack with much-needed improvements"
+val user: String by project
+val repo: String by project
+val g: String by project
+val artifact: String by project
+val v: String by project
+val desc: String by project
 
 val localMavenRepo = uri(layout.buildDirectory.dir("repo").get())
 
