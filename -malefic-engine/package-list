@@ -3,11 +3,9 @@ $dokka.linkExtension:html
 $dokka.location:xyz.malefic.compose.engine.factory////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/BoxFactory/#androidx.compose.ui.Modifier#androidx.compose.ui.Alignment#kotlin.Boolean#kotlin.Function1[androidx.compose.foundation.layout.BoxScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/-box-factory.html
-$dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/applyAndInvoke/#kotlin.Function1[xyz.malefic.compose.engine.factory.BoxFactory,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/apply-and-invoke.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/compose.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/content.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/contentAlignment/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/content-alignment.html
-$dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/invoke.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/modifier.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/propagateMinConstraints/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/propagate-min-constraints.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/index.html
