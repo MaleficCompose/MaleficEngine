@@ -35,27 +35,4 @@ class BoxFactory(
                 content()
             }
         }
-
-    /**
-     * Invokes the composable function created by the `compose` method.
-     *
-     * This method triggers the rendering of the Box layout with the specified
-     * properties and content.
-     */
-    @Composable
-    override fun invoke() = compose().invoke()
-
-    /**
-     * Applies a configuration block to the BoxFactory and then invokes the box.
-     *
-     * This method allows for modifying the BoxFactory's properties using the provided
-     * lambda block, and subsequently renders the box with the updated configuration.
-     *
-     * @param block A lambda block to configure the BoxFactory properties.
-     */
-    @Composable
-    fun applyAndInvoke(block: BoxFactory.() -> Unit) {
-        block()
-        invoke()
-    }
 }
