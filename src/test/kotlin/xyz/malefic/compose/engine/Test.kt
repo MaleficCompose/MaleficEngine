@@ -36,4 +36,4 @@ fun main() {
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class ComposableTest
+internal annotation class ComposableTest

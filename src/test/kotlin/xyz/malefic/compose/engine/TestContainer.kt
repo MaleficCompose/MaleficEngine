@@ -13,7 +13,7 @@ import xyz.malefic.compose.engine.factory.*
 import xyz.malefic.compose.engine.pocket.*
 
 @Suppress("unused")
-class TestContainer {
+internal class TestContainer {
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
     @Preview
