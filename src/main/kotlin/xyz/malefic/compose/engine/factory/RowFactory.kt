@@ -41,24 +41,4 @@ class RowFactory(
                 content()
             }
         }
-
-    /**
-     * Invokes the composable function created by the compose method,
-     * rendering the Row layout with the current configuration.
-     */
-    @Composable
-    override fun invoke() = compose().invoke()
-
-    /**
-     * Applies the given configuration block to the RowFactory instance and then
-     * invokes the composable function to render the Row layout with the updated
-     * configuration.
-     *
-     * @param block A lambda function to configure the RowFactory instance.
-     */
-    @Composable
-    fun applyAndInvoke(block: RowFactory.() -> Unit) {
-        block()
-        invoke()
-    }
 }

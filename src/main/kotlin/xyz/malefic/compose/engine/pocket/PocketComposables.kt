@@ -1,10 +1,6 @@
 package xyz.malefic.compose.engine.pocket
 
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -40,14 +36,14 @@ fun (@Composable () -> Unit).space(
  * @receiver The composable function to which the divider will be added. To apply this to a ButtonFactory, `ButtonFactory().compose().divider()` can be used.
  * @param thickness The optional thickness of the divider. Defaults to 1.dp.
  * @param color The optional color of the divider. Defaults to Color.Black.
- * @param isVertical Whether the divider should be vertical. Defaults to false.
+ * @param vertical Whether the divider should be vertical. Defaults to false.
  * @return A composable function with the added divider.
  */
 @Composable
 fun (@Composable () -> Unit).divide(
     thickness: Dp = 1.dp,
     color: Color = Color.Black,
-    isVertical: Boolean = false,
+    vertical: Boolean = false,
 ): @Composable () -> Unit =
     {
         this()
@@ -55,6 +51,7 @@ fun (@Composable () -> Unit).divide(
             color = color,
             modifier =
                 Modifier
-                    .then(if (isVertical) Modifier.fillMaxHeight().width(thickness) else Modifier.fillMaxWidth().height(thickness)),
+                    .then(if (vertical) Modifier.width(thickness) else Modifier.height(thickness))
+                    .then(if (vertical) Modifier.fillMaxHeight() else Modifier.fillMaxWidth()),
         )
     }

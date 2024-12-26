@@ -4,11 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ButtonElevation
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
@@ -70,27 +66,4 @@ class ButtonFactory(
                 content()
             }
         }
-
-    /**
-     * Invokes the button to render the button with the configured properties.
-     *
-     * This method calls the `compose` function and executes the resulting composable lambda,
-     * effectively rendering the button with the current configuration of the ButtonFactory.
-     */
-    @Composable
-    override fun invoke() = compose().invoke()
-
-    /**
-     * Applies a configuration block to the ButtonFactory and then invokes the button.
-     *
-     * This method allows for modifying the ButtonFactory's properties using the provided
-     * lambda block, and subsequently renders the button with the updated configuration.
-     *
-     * @param block A lambda block to configure the ButtonFactory properties.
-     */
-    @Composable
-    fun applyAndInvoke(block: ButtonFactory.() -> Unit) {
-        block()
-        invoke()
-    }
 }

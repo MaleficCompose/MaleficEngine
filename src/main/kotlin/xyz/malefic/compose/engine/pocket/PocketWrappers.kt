@@ -1,11 +1,6 @@
 package xyz.malefic.compose.engine.pocket
 
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.TooltipArea
-import androidx.compose.foundation.TooltipPlacement
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -16,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
+import xyz.malefic.compose.engine.factory.BoxFactory
 
 /**
  * Centers the content of a composable function within a Box layout.
@@ -30,8 +26,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun (@Composable () -> Unit).center(mod: Modifier = Modifier): @Composable () -> Unit =
     {
-        Box(mod.fillMaxSize(), contentAlignment = Alignment.Center) {
+        BoxFactory {
             this@center()
+        } *= {
+            modifier = mod.fillMaxSize()
+            contentAlignment = Alignment.Center
         }
     }
 
@@ -87,8 +86,10 @@ fun (@Composable () -> Unit).background(
     mod: Modifier = Modifier,
 ): @Composable () -> Unit =
     {
-        Box(mod.background(color)) {
+        BoxFactory {
             this@background()
+        } *= {
+            modifier = mod.background(color)
         }
     }
 
@@ -110,8 +111,10 @@ fun (@Composable () -> Unit).outline(
     mod: Modifier = Modifier,
 ): @Composable () -> Unit =
     {
-        Box(mod.border(width, color)) {
+        BoxFactory {
             this@outline()
+        } *= {
+            modifier = mod.border(width, color)
         }
     }
 
@@ -131,8 +134,10 @@ fun (@Composable () -> Unit).padding(
     mod: Modifier = Modifier,
 ): @Composable () -> Unit =
     {
-        Box(mod.padding(all)) {
+        BoxFactory {
             this@padding()
+        } *= {
+            modifier = mod.padding(all)
         }
     }
 
@@ -153,7 +158,9 @@ fun (@Composable () -> Unit).padding(
     mod: Modifier = Modifier,
 ): @Composable () -> Unit =
     {
-        Box(mod.padding(horizontal, vertical)) {
+        BoxFactory {
             this@padding()
+        } *= {
+            modifier = mod.padding(horizontal, vertical)
         }
     }

@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.kermit)
     testImplementation(compose.desktop.currentOs)
     testImplementation(kotlin("test"))
+    testImplementation(kotlin("reflect"))
 }
 
 tasks.apply {

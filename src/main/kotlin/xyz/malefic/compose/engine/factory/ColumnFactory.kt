@@ -41,25 +41,4 @@ class ColumnFactory(
                 content()
             }
         }
-
-    /**
-     * Invokes the composable function created by the `compose` method.
-     * This method is part of the ComposableFactory interface implementation.
-     */
-    @Composable
-    override fun invoke() = compose().invoke()
-
-    /**
-     * Applies the given block of modifications to the ColumnFactory instance
-     * and then invokes the composable function. This allows for dynamic
-     * configuration and immediate rendering of the Column layout.
-     *
-     * @param block A lambda function that applies modifications to the
-     * ColumnFactory instance.
-     */
-    @Composable
-    fun applyAndInvoke(block: ColumnFactory.() -> Unit) {
-        block()
-        invoke()
-    }
 }

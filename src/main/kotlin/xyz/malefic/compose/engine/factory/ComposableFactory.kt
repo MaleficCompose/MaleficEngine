@@ -15,8 +15,8 @@ interface ComposableFactory {
     fun compose(): @Composable () -> Unit
 
     /**
-     * Invokes a composable function.
+     * Invokes the composed function.
      */
     @Composable
-    fun invoke() = compose().invoke()
+    operator fun invoke() = compose().invoke()
 }

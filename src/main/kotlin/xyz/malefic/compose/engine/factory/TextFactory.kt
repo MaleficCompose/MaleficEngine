@@ -94,27 +94,4 @@ class TextFactory(
                 style = style ?: LocalTextStyle.current,
             )
         }
-
-    /**
-     * Invokes the text to render with the configured properties.
-     *
-     * This method calls the `compose` function and executes the resulting composable lambda,
-     * effectively rendering the text with the current configuration of the TextFactory.
-     */
-    @Composable
-    override fun invoke() = compose().invoke()
-
-    /**
-     * Applies a configuration block to the TextFactory and then invokes the text.
-     *
-     * This method allows for modifying the TextFactory's properties using the provided
-     * lambda block, and subsequently renders the text with the updated configuration.
-     *
-     * @param block A lambda block to configure the TextFactory properties.
-     */
-    @Composable
-    fun applyAndInvoke(block: TextFactory.() -> Unit) {
-        block()
-        invoke()
-    }
 }
