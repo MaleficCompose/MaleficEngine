@@ -35,8 +35,8 @@ internal class TestContainer {
                             }
                         }.compose()
                         .tooltip {
-                            TextFactory("Hello!")
-                        }.space()()
+                            TextFactory("Hello!")()
+                        }.space(width = 8.dp)()
                     ButtonFactory() *= {
                         onClick = {
                             buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"

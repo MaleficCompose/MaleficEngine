@@ -172,8 +172,8 @@ fun ButtonTest() {
                         }
                     }.compose()
                     .tooltip {
-                        TextFactory("Hello!") // Tooltip for the button
-                    }.space()() // Adds space after the button
+                        TextFactory("Hello!")() // Tooltip for the button
+                    }.space(width = 8.dp)() // Adds a spacer after the button
                 ButtonFactory() *= {
                     onClick = {
                         buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1" // Toggles button text
@@ -199,7 +199,8 @@ fun ButtonTest() {
 The `TextTest2` function showcases a layout with two text components arranged horizontally using `RowFactory`. It demonstrates tooltips and vertical dividers.
 
 ```kotlin
-@OptIn(ExperimentalFoundationApi::class)A@Composable
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
 fun TextTest2() =
     MaterialTheme {
         BoxFactory {

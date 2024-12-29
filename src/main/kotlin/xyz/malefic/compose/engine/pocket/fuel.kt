@@ -21,13 +21,13 @@ class fuel(
      * function, allowing for flexible layout adjustments.
      *
      * @param height The optional height of the spacer. Defaults to null, meaning no height is applied.
-     * @param width The optional width of the spacer. Defaults to 8.dp.
+     * @param width The optional width of the spacer. Defaults to null, meaning no height is applied.
      * @return The `fuel` instance with the added spacer.
      */
     @Composable
     fun space(
         height: Dp? = null,
-        width: Dp? = 8.dp,
+        width: Dp? = null,
     ): fuel =
         this.apply {
             function.space(height, width)
@@ -40,15 +40,15 @@ class fuel(
      * composable function, allowing for visual separation of content.
      *
      * @param thickness The thickness of the divider. Defaults to 1.dp.
-     * @param color The color of the divider. Defaults to Color.Black.
-     * @param vertical Whether the divider should be vertical. Defaults to false.
+     * @param color The color of the divider. Defaults to the color that goes on the background of the material theme.
+     * @param vertical Whether the divider should be vertical. Defaults to true.
      * @return The `fuel` instance with the added divider.
      */
     @Composable
     fun divide(
         thickness: Dp = 1.dp,
-        color: Color = Color.Black,
-        vertical: Boolean = false,
+        color: Color = MaterialTheme.colors.onBackground,
+        vertical: Boolean = true,
     ): fuel =
         this.apply {
             function = function.divide(thickness, color, vertical)

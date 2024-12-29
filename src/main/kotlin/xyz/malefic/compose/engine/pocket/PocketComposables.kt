@@ -2,6 +2,7 @@ package xyz.malefic.compose.engine.pocket
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -9,17 +10,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 /**
- * Adds a spacer with optional height and width to a composable function.
+ * Adds a spacer to a composable function.
  *
- * @receiver The composable function to which the spacer will be added. To apply this to a ButtonFactory, `ButtonFactory().compose().space()` can be used.
- * @param height The optional height of the spacer. Defaults to null, meaning no height is applied.
- * @param width The optional width of the spacer. Defaults to 8.dp.
+ * @receiver The composable function to which the spacer will be added.
+ * @param height The height of the spacer. Defaults to null, meaning no height is applied.
+ * @param width The width of the spacer. Defaults to null, meaning no height is applied.
  * @return A composable function with the added spacer.
  */
 @Composable
 fun (@Composable () -> Unit).space(
     height: Dp? = null,
-    width: Dp? = 8.dp,
+    width: Dp? = null,
 ): @Composable () -> Unit =
     {
         this()
@@ -31,19 +32,19 @@ fun (@Composable () -> Unit).space(
     }
 
 /**
- * Adds a divider with optional thickness and color to a composable function.
+ * Adds a divider to a composable function.
  *
- * @receiver The composable function to which the divider will be added. To apply this to a ButtonFactory, `ButtonFactory().compose().divider()` can be used.
- * @param thickness The optional thickness of the divider. Defaults to 1.dp.
- * @param color The optional color of the divider. Defaults to Color.Black.
- * @param vertical Whether the divider should be vertical. Defaults to false.
+ * @receiver The composable function to which the divider will be added.
+ * @param thickness The thickness of the divider. Defaults to 1.dp.
+ * @param color The color of the divider. Defaults to the color that goes on the background of the material theme.
+ * @param vertical Whether the divider should be vertical. Defaults to true.
  * @return A composable function with the added divider.
  */
 @Composable
 fun (@Composable () -> Unit).divide(
     thickness: Dp = 1.dp,
-    color: Color = Color.Black,
-    vertical: Boolean = false,
+    color: Color = MaterialTheme.colors.onBackground,
+    vertical: Boolean = true,
 ): @Composable () -> Unit =
     {
         this()
