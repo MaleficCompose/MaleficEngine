@@ -6,6 +6,8 @@ MaleficEngine is a Kotlin-based library designed to facilitate the creation of U
 
 - [Installation](#installation)
 - [Overview](#overview)
+    - [Factories](#factories)
+    - [Fuel Class](#fuel-class)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -16,7 +18,7 @@ To include MaleficEngine in your project, add the following dependency to your `
 
 ```kotlin
 dependencies {
-    implementation("xyz.malefic.compose:engine:1.0.0")
+    implementation("xyz.malefic.compose:engine:1.1.1")
 }
 ```
 
@@ -30,11 +32,13 @@ repositories {
 
 ## Overview
 
-MaleficEngine provides a set of factories and annotations to create composable functions efficiently. It includes custom factories like `TextFactory`, `ButtonFactory`, `BoxFactory`, and more, which help structure your UI components. These factories can be customized using the provided methods and properties.
+### Factories
 
-### ComposableFactory Interface
+Factories in MaleficEngine are designed to simplify the creation of composable functions. Each factory is a customizable blueprint for a specific UI component, providing a structured way to define, configure, and render composables.
 
-The `ComposableFactory` interface is a key component in MaleficEngine. It defines a contract for creating composable functions, which are the building blocks of Jetpack Compose UI components.
+#### ComposableFactory Interface
+
+The `ComposableFactory` interface is the foundation for all factories. It defines a contract for creating composable functions.
 
 ```kotlin
 interface ComposableFactory {
@@ -54,13 +58,12 @@ interface ComposableFactory {
 }
 ```
 
-- **compose Method**: This method returns a composable lambda that defines the structure and properties of the UI component. Each factory class implements this method to specify how its respective UI component should be constructed.
+- **compose Method**: Returns a composable lambda defining the UI component's structure and properties.
+- **invoke Method**: Enables the factory to be called like a function, simplifying usage.
 
-- **invoke Method**: This operator function allows the `ComposableFactory` to be called like a function. It invokes the composable lambda returned by `compose`, providing a convenient way to render the UI component.
+#### `*=` Operator
 
-### `*=` Operator
-
-The `*=` operator is defined in the `PocketFactoryExtensions.kt` file. It allows you to modify a `ComposableFactory` with a block of code and then immediately invoke it. This operator is particularly useful for applying configurations to a factory before rendering it.
+The `*=` operator, defined in the `PocketFactoryExtensions.kt` file, allows you to apply configurations to a factory and immediately invoke it. This makes the code more concise and readable.
 
 ```kotlin
 @Composable
@@ -70,11 +73,85 @@ operator fun <T : ComposableFactory> T.timesAssign(block: T.() -> Unit) {
 }
 ```
 
+#### Use Cases
+
+Factories are best suited for creating reusable UI components with predefined structures and behaviors. Examples include:
+
+- Buttons (`ButtonFactory`)
+- Layout containers (`BoxFactory`, `ColumnFactory`, `RowFactory`)
+- Text components (`TextFactory`)
+
+They provide a streamlined way to define and customize components, reducing boilerplate code while maintaining flexibility.
+
+For additional details, refer to the [Dokka documentation](https://engine.compose.malefic.xyz).
+
+### Fuel Class
+
+The `fuel` class is designed for wrapping composable functions that do not have a dedicated factory. It offers advanced customization options, such as adding tooltips, outlines, and other enhancements.
+
+#### How It Works
+
+The `fuel` class acts as a container for a composable function, providing methods to modify and render it with additional features.
+
+```kotlin
+class fuel(
+    var function: @Composable () -> Unit,
+)
+```
+
+- **Composable Function Wrapper**: Stores the composable function in the `function` property, enabling enhancements without modifying the original logic.
+- **Operator Overloading**: Provides a concise syntax for chaining configurations and rendering the composable.
+
+#### Key Methods
+
+- **`invoke` Operator**: Executes the stored composable function.
+- **`*` Operator**: Allows chaining configurations, such as adding tooltips and outlines, in a fluent manner.
+
+#### Use Cases
+
+The `fuel` class is ideal for:
+
+- Wrapping composable functions that lack factory support.
+- Adding additional features (e.g., tooltips, outlines) to existing composables.
+- Enhancing flexibility and reusability of standalone composable functions.
+
+For more in-depth information, refer to the [Dokka documentation](https://engine.compose.malefic.xyz).
+
+#### Example
+
+The `FuelTest` function demonstrates the use of the `fuel` class to wrap a `TextFactory` composable and add custom configurations:
+
+```kotlin
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun FuelTest() {
+    MaterialTheme {
+        fuel {
+            TextFactory("Fuel Composable")()
+        } * {
+            tooltip {
+                TextFactory("This is a tooltip for the fuel composable.")
+                    .apply {
+                        color = Color.White
+                    }.compose()
+                    .padding(3.dp)
+                    .background(color = Color.Black)
+                    .outline(color = Color.Red)()
+            }
+            center()
+        }
+    }
+}
+```
+
+- **Tooltip and Outline**: Adds a tooltip and a red outline around the tooltip content.
+- **Enhanced Composability**: Demonstrates how `fuel` enables complex configurations with minimal code.
+
 ## Examples
 
 ### ButtonTest
 
-The `ButtonTest` function demonstrates how to create interactive buttons using `ButtonFactory`. It uses `remember` to manage state changes and demonstrates how to update button text on click events.
+The `ButtonTest` function demonstrates how to create interactive buttons using `ButtonFactory`. It uses `remember` to manage state changes and dynamically updates button text based on user interactions.
 
 ```kotlin
 @OptIn(ExperimentalFoundationApi::class)
@@ -117,19 +194,12 @@ fun ButtonTest() {
 }
 ```
 
-#### Explanation
-
-- **State Management**: The `buttonText` variable is managed using `remember` and `mutableStateOf`, allowing the button text to change dynamically based on user interaction.
-- **ButtonFactory**: Two buttons are created using `ButtonFactory`. The first button uses `apply` to set properties and then calls `compose` to render the button. The second button uses the `*=` operator to configure and render the button in one step.
-- **Tooltip and Space**: The first button includes a tooltip with the text "Hello!" and a space after it for visual separation.
-
 ### TextTest2
 
-The `TextTest2` function showcases a layout with two text components arranged horizontally using `RowFactory`. It demonstrates how to use tooltips and vertical dividers.
+The `TextTest2` function showcases a layout with two text components arranged horizontally using `RowFactory`. It demonstrates tooltips and vertical dividers.
 
 ```kotlin
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
+@OptIn(ExperimentalFoundationApi::class)A@Composable
 fun TextTest2() =
     MaterialTheme {
         BoxFactory {
@@ -151,12 +221,6 @@ fun TextTest2() =
         }
     }
 ```
-
-#### Explanation
-
-- **RowFactory**: The `RowFactory` arranges the text components horizontally. The `*=` operator is used to set alignment and arrangement properties before rendering.
-- **TextFactory**: Two text components are created. The first text includes a tooltip and a vertical divider for separation.
-- **Layout Configuration**: The entire layout is centered both vertically and horizontally within a `BoxFactory`, ensuring the content is displayed in the center of the available space.
 
 ## Contributing
 

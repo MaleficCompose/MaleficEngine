@@ -139,6 +139,24 @@ class fuel(
         }
 
     /**
+     * Applies uniform padding to the composable function within the `fuel` instance.
+     *
+     * This method wraps the composable function in a Box with specified uniform padding.
+     *
+     * @param all The padding to apply. Defaults to 0.dp.
+     * @param mod An optional [Modifier] to be applied to the Box.
+     * @return The `fuel` instance with the specified padding applied.
+     */
+    @Composable
+    fun padding(
+        all: Dp = 0.dp,
+        mod: Modifier = Modifier,
+    ): fuel =
+        this.apply {
+            function = function.padding(all, mod)
+        }
+
+    /**
      * Applies horizontal and vertical padding to the composable function within the `fuel` instance.
      *
      * This method wraps the composable function in a Box with specified horizontal and vertical padding.
@@ -166,5 +184,11 @@ class fuel(
     @Composable
     operator fun invoke() {
         function()
+    }
+
+    @Composable
+    operator fun times(block: @Composable fuel.() -> Unit) {
+        block()
+        this()
     }
 }

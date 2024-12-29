@@ -8,7 +8,10 @@ import xyz.malefic.compose.engine.factory.ComposableFactory
  * with a block of code and then invoked. The block is executed in the
  * context of the factory, and the factory is invoked immediately after.
  *
+ * Essentially, this function is a combination of apply then compose and invoke.
+ *
  * @param block A lambda with receiver that modifies the factory.
+ * @receiver A composable factory instance.
  */
 @Composable
 operator fun <T : ComposableFactory> T.timesAssign(block: T.() -> Unit) {
