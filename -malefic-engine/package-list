@@ -76,8 +76,10 @@ $dokka.location:xyz.malefic.compose.engine.pocket/fuel/fuel/#kotlin.Function0[ko
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/function/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/function.html
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/invoke.html
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/outline/#androidx.compose.ui.graphics.Color#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/outline.html
+$dokka.location:xyz.malefic.compose.engine.pocket/fuel/padding/#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/padding.html
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/padding/#androidx.compose.ui.unit.Dp#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/padding.html
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/space/#androidx.compose.ui.unit.Dp?#androidx.compose.ui.unit.Dp?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/space.html
+$dokka.location:xyz.malefic.compose.engine.pocket/fuel/times/#kotlin.Function1[xyz.malefic.compose.engine.pocket.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/times.html
 $dokka.location:xyz.malefic.compose.engine.pocket/fuel/tooltip/#androidx.compose.ui.Modifier#kotlin.Int#androidx.compose.foundation.TooltipPlacement#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/fuel/tooltip.html
 xyz.malefic.compose.engine.factory
 xyz.malefic.compose.engine.pocket
