@@ -28,10 +28,11 @@ fun (@Composable () -> Unit).center(mod: Modifier = Modifier): @Composable () ->
     {
         BoxFactory {
             this@center()
-        } *= {
-            modifier = mod.fillMaxSize()
-            contentAlignment = Alignment.Center
-        }
+        } /=
+            {
+                modifier = mod.fillMaxSize()
+                contentAlignment = Alignment.Center
+            }
     }
 
 /**
@@ -88,9 +89,10 @@ fun (@Composable () -> Unit).background(
     {
         BoxFactory {
             this@background()
-        } *= {
-            modifier = mod.background(color)
-        }
+        } /=
+            {
+                modifier = mod.background(color)
+            }
     }
 
 /**
@@ -113,9 +115,10 @@ fun (@Composable () -> Unit).outline(
     {
         BoxFactory {
             this@outline()
-        } *= {
-            modifier = mod.border(width, color)
-        }
+        } /=
+            {
+                modifier = mod.border(width, color)
+            }
     }
 
 /**
@@ -136,9 +139,10 @@ fun (@Composable () -> Unit).padding(
     {
         BoxFactory {
             this@padding()
-        } *= {
-            modifier = mod.padding(all)
-        }
+        } /=
+            {
+                modifier = mod.padding(all)
+            }
     }
 
 /**
@@ -160,7 +164,8 @@ fun (@Composable () -> Unit).padding(
     {
         BoxFactory {
             this@padding()
-        } *= {
-            modifier = mod.padding(horizontal, vertical)
-        }
+        } /=
+            {
+                modifier = mod.padding(horizontal, vertical)
+            }
     }

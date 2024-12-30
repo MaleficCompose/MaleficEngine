@@ -25,7 +25,7 @@ class fuel(
      * invoking the main composable function.
      */
     @Composable
-    operator fun times(block: @Composable fuel.() -> Unit) {
+    operator fun timesAssign(block: @Composable fuel.() -> Unit) {
         block()
         this()
     }
