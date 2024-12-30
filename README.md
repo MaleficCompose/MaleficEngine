@@ -1,194 +1,157 @@
 # MaleficEngine
 
-MaleficEngine is a Kotlin-based library designed to facilitate the creation of UI components using Jetpack Compose. It provides a set of tools and wrappers to streamline the development of composable functions as well as provide support for way more customizability.
+Welcome to the MaleficEngine project! This document provides an in-depth explanation of how the MaleficEngine works, along with integrated examples from the test cases in `TestContainer`.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Overview](#overview)
-    - [Factories](#factories)
-    - [Fuel Class](#fuel-class)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+1. [Introduction](#introduction)
+2. [Setup and Installation](#setup-and-installation)
+3. [Core Concepts](#core-concepts)
+   - [Composable Functions](#composable-functions)
+   - [Annotations](#annotations)
+   - [Operators](#operators)
+4. [Examples](#examples)
+   - [ButtonTest](#buttontest)
+   - [TextTest](#texttest)
+   - [TextTest2](#texttest2)
+   - [FuelFactoryText](#fuelfactorytext)
+5. [Contributing](#contributing)
+6. [License](#license)
 
-## Installation
+## Introduction
+
+MaleficEngine is a Kotlin-based library designed to facilitate the creation of composable UI components using Jetpack Compose. It provides a set of tools and utilities to streamline UI development, testing, and deployment.
+
+## Setup and Installation
+
+To set up the MaleficEngine project, ensure you have the following prerequisites:
+
+- JDK 17 or higher
+- Kotlin 1.5 or higher
+- Gradle 7.0 or higher
+
+### Maven Dependency
 
 To include MaleficEngine in your project, add the following dependency to your `build.gradle.kts` file:
-
-```kotlin
-dependencies {
-    implementation("xyz.malefic.compose:engine:1.1.1")
-}
-```
-
-Ensure that you have the necessary repositories configured in your `settings.gradle.kts` or `build.gradle.kts`:
 
 ```kotlin
 repositories {
     mavenCentral()
 }
-```
 
-## Overview
-
-### Factories
-
-Factories in MaleficEngine are designed to simplify the creation of composable functions. Each factory is a customizable blueprint for a specific UI component, providing a structured way to define, configure, and render composables.
-
-#### ComposableFactory Interface
-
-The `ComposableFactory` interface is the foundation for all factories. It defines a contract for creating composable functions.
-
-```kotlin
-interface ComposableFactory {
-    /**
-     * Creates a composable function.
-     *
-     * @return A composable lambda.
-     */
-    @Composable
-    fun compose(): @Composable () -> Unit
-
-    /**
-     * Invokes the composed function.
-     */
-    @Composable
-    operator fun invoke() = compose().invoke()
+dependencies {
+    implementation("xyz.malefic.compose:engine:<version>")
 }
 ```
 
-- **compose Method**: Returns a composable lambda defining the UI component's structure and properties.
-- **invoke Method**: Enables the factory to be called like a function, simplifying usage.
+Replace `<version>` with the specific version of MaleficEngine you wish to use. The library is published to a local Maven repository located at `xyz.malefic.compose:engine`.
 
-#### `*=` Operator
+## Core Concepts
 
-The `*=` operator, defined in the `PocketFactoryExtensions.kt` file, allows you to apply configurations to a factory and immediately invoke it. This makes the code more concise and readable.
+### Composable Functions
 
-```kotlin
-@Composable
-operator fun <T : ComposableFactory> T.timesAssign(block: @Composable T.() -> Unit) {
-    block() // Applies the configuration block to the factory
-    this()  // Invokes the factory
-}
-```
+Composable functions are the building blocks of the MaleficEngine. They are annotated with `@Composable` and are used to define UI components.
 
-#### Use Cases
+### Annotations
 
-Factories are best suited for creating reusable UI components with predefined structures and behaviors. Examples include:
+The `@ComposableTest` annotation is used to mark functions that are intended for testing purposes. These functions are automatically discovered and can be executed via the main entry point.
 
-- Buttons (`ButtonFactory`)
-- Layout containers (`BoxFactory`, `ColumnFactory`, `RowFactory`)
-- Text components (`TextFactory`)
+### Operators
 
-They provide a streamlined way to define and customize components, reducing boilerplate code while maintaining flexibility.
+MaleficEngine uses custom operators to enhance the composability and flexibility of UI components. These operators allow chaining and modification of composable logic.
 
-For additional details, refer to the [Dokka documentation](https://engine.compose.malefic.xyz).
+#### `*` and `*=` Operators
 
-### Fuel Class
+- `*`: This operator applies a composable block to the `fuel` instance of a `ComposableFactory`. It allows chaining of additional composable operations without invoking the main composable function.
 
-The `fuel` class is designed for wrapping composable functions that do not have a dedicated factory. It offers advanced customization options, such as adding tooltips, outlines, and other enhancements.
+- `*=`: This operator applies a composable block to the `fuel` instance and then invokes the composable function. It is useful for chaining operations and executing the main composable logic.
 
-#### How It Works
-
-The `fuel` class acts as a container for a composable function, providing methods to modify and render it with additional features.
+Example usage in `FuelFactoryText`:
 
 ```kotlin
-class fuel(
-    var function: @Composable () -> Unit,
-)
-```
-
-- **Composable Function Wrapper**: Stores the composable function in the `function` property, enabling enhancements without modifying the original logic.
-- **Operator Overloading**: Provides a concise syntax for chaining configurations and rendering the composable.
-
-#### Key Methods
-
-- **`invoke` Operator**: Executes the stored composable function.
-- **`*` Operator**: Allows chaining configurations, such as adding tooltips and outlines, in a fluent manner.
-
-#### Use Cases
-
-The `fuel` class is ideal for:
-
-- Wrapping composable functions that lack factory support.
-- Adding additional features (e.g., tooltips, outlines) to existing composables.
-- Enhancing flexibility and reusability of standalone composable functions.
-
-For more in-depth information, refer to the [Dokka documentation](https://engine.compose.malefic.xyz).
-
-#### Example
-
-The `FuelTest` function demonstrates the use of the `fuel` class to wrap a `TextFactory` composable and add custom configurations:
-
-```kotlin
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-fun FuelTest() {
-    MaterialTheme {
-        fuel {
-            TextFactory("Fuel Composable")()
-        } * {
-            tooltip {
-                TextFactory("This is a tooltip for the fuel composable.")
-                    .apply {
-                        color = Color.White
-                    }.compose()
-                    .padding(3.dp)
-                    .background(color = Color.Black)
-                    .outline(color = Color.Red)()
-            }
-            center()
+TextFactory() / {
+    text = "Fuel Composable"
+} *= {
+    tooltip {
+        TextFactory("This is a tooltip for the fuel composable").apply {
+            color = MaterialTheme.colors.background
+        } *= {
+            padding(3.dp)
+            background(MaterialTheme.colors.onBackground)
+            outline(MaterialTheme.colors.primary)
         }
     }
+    center()
 }
 ```
 
-- **Tooltip and Outline**: Adds a tooltip and a red outline around the tooltip content.
-- **Enhanced Composability**: Demonstrates how `fuel` enables complex configurations with minimal code.
+#### `/` and `/=` Operators
+
+- `/`: This operator applies a non-composable block to a `ComposableFactory` instance, allowing modifications without invoking the composable function.
+
+- `/=`: This operator applies a composable block to a `ComposableFactory` instance and then invokes the composable function. It combines modification and invocation in a single step.
 
 ## Examples
 
 ### ButtonTest
 
-The `ButtonTest` function demonstrates how to create interactive buttons using `ButtonFactory`. It uses `remember` to manage state changes and dynamically updates button text based on user interactions.
+The `ButtonTest` function is a composable test that demonstrates the use of buttons with dynamic text and tooltips. It utilizes the `MaterialTheme` to provide consistent styling across the UI components. The function defines a mutable state variable `buttonText` that toggles between "Option 1" and "Option 2" when the button is clicked. This dynamic behavior is achieved using the `remember` and `mutableStateOf` functions.
+
+The UI layout is structured using `BoxFactory` and `ColumnFactory`, which organize the components vertically. The `ButtonFactory` is used to create buttons, and the `TextFactory` displays the current `buttonText`. Tooltips are added to the buttons using the `tooltip` operator, providing additional information when hovered over.
 
 ```kotlin
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
+@ComposableTest
 fun ButtonTest() {
-    var buttonText by remember { mutableStateOf("Option 1") } // Initializes button text state
+    var buttonText by remember { mutableStateOf("Option 1") }
 
     MaterialTheme {
         BoxFactory {
             ColumnFactory {
-                ButtonFactory()
-                    .apply {
-                        onClick = {
-                            buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1" // Toggles button text
-                        }
-                        content = {
-                            TextFactory(buttonText)() // Displays the current button text
-                        }
-                    }.compose()
-                    .tooltip {
-                        TextFactory("Hello!")() // Tooltip for the button
-                    }.space(width = 8.dp)() // Adds a spacer after the button
-                ButtonFactory() *= {
+                ButtonFactory() / {
                     onClick = {
-                        buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1" // Toggles button text
+                        buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"
                     }
                     content = {
-                        TextFactory(buttonText)() // Displays the current button text
+                        TextFactory(buttonText)()
                     }
+                } *= {
+                    tooltip {
+                        TextFactory("Hello!")()
+                    }
+                    space(8.dp)
                 }
-            } *= {
-                horizontalAlignment = Alignment.CenterHorizontally // Centers content horizontally
-                verticalArrangement = Arrangement.Center // Centers content vertically
             }
-        } *= {
-            contentAlignment = Alignment.Center // Centers the entire Box content
-            modifier = Modifier.fillMaxSize() // Fills the available space
+        }
+    }
+}
+```
+
+### TextTest
+
+The `TextTest` function showcases the use of text components with tooltips and alignment. It uses a `ColumnFactory` to arrange text components vertically. Each `TextFactory` component can have a tooltip, which is a small popup that provides additional information. The tooltip for "Text 1" includes styling such as padding, background, and outline, demonstrating how to customize the appearance of tooltips.
+
+The `divide` operator is used to add a visual separator between components, enhancing the layout's clarity.
+
+```kotlin
+@Composable
+@ComposableTest
+fun TextTest() {
+    MaterialTheme {
+        BoxFactory {
+            ColumnFactory {
+                TextFactory("Text 1") *= {
+                    tooltip {
+                        TextFactory("This is the tooltip of the first text component.") *= {
+                            padding(3.dp)
+                            background()
+                            outline()()
+                        }
+                    }
+                    divide(vertical = false)
+                }
+                TextFactory("Text 2")()
+            }
         }
     }
 }
@@ -196,44 +159,63 @@ fun ButtonTest() {
 
 ### TextTest2
 
-The `TextTest2` function showcases a layout with two text components arranged horizontally using `RowFactory`. It demonstrates tooltips and vertical dividers.
+The `TextTest2` function demonstrates a row layout with text components and tooltips. It uses `RowFactory` to arrange text components horizontally. Similar to `TextTest`, tooltips are added to provide additional context for each text component. The `divide` operator is used to separate the text components visually.
+
+The layout is centered both vertically and horizontally, ensuring that the text components are displayed prominently in the UI.
 
 ```kotlin
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun TextTest2() =
+@ComposableTest
+fun TextTest2() {
     MaterialTheme {
         BoxFactory {
             RowFactory {
-                TextFactory("Text 1")
-                    .compose()
-                    .tooltip {
-                        TextFactory("This is the tooltip of the first text component.")() // Tooltip for the first text
-                    }.divide(vertical = true)() // Adds a vertical divider
-                TextFactory("Text 2")() // Creates a second text component
-            } *= {
-                verticalAlignment = Alignment.CenterVertically // Centers content vertically
-                horizontalArrangement = Arrangement.Center // Centers content horizontally
-                modifier = Modifier.fillMaxSize() // Fills the available space
+                TextFactory("Text 1") *= {
+                    tooltip {
+                        TextFactory("This is the tooltip of the first text component.")()
+                    }
+                    divide()
+                }
+                TextFactory("Text 2")()
             }
-        } *= {
-            contentAlignment = Alignment.Center // Centers the entire Box content
-            modifier = Modifier.fillMaxSize() // Fills the available space
         }
     }
+}
+```
+
+### FuelFactoryText
+
+The `FuelFactoryText` function illustrates a custom text component with a tooltip. It uses `TextFactory` to create a text component labeled "Fuel Composable". The tooltip provides additional information and is styled with padding, background, and outline colors derived from the `MaterialTheme`.
+
+The `center` operator is used to center the text component within its parent, ensuring a balanced and visually appealing layout.
+
+```kotlin
+@Composable
+@ComposableTest
+fun FuelFactoryText() {
+    MaterialTheme {
+        TextFactory() / {
+            text = "Fuel Composable"
+        } *= {
+            tooltip {
+                TextFactory("This is a tooltip for the fuel composable").apply {
+                    color = MaterialTheme.colors.background
+                } *= {
+                    padding(3.dp)
+                    background(MaterialTheme.colors.onBackground)
+                    outline(MaterialTheme.colors.primary)
+                }
+            }
+            center()
+        }
+    }
+}
 ```
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Commit your changes.
-4. Push your branch and create a pull request.
-
-Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+Contributions are welcome! Please follow the standard GitHub workflow for submitting pull requests and issues.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://opensource.org/licenses/MIT) file for more details.
