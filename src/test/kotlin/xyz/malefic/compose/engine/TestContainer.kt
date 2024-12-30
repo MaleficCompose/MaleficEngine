@@ -9,6 +9,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import xyz.malefic.compose.engine.factory.*
+import xyz.malefic.compose.engine.factory.div
+import xyz.malefic.compose.engine.factory.divAssign
+import xyz.malefic.compose.engine.factory.timesAssign
 import xyz.malefic.compose.engine.fuel.background
 import xyz.malefic.compose.engine.fuel.center
 import xyz.malefic.compose.engine.fuel.divide
@@ -16,9 +19,6 @@ import xyz.malefic.compose.engine.fuel.outline
 import xyz.malefic.compose.engine.fuel.padding
 import xyz.malefic.compose.engine.fuel.space
 import xyz.malefic.compose.engine.fuel.tooltip
-import xyz.malefic.compose.engine.pocket.*
-import java.awt.SystemColor.text
-import java.lang.module.ModuleFinder.compose
 
 @Suppress("unused")
 internal class TestContainer {

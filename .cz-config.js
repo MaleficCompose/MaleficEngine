@@ -23,10 +23,10 @@ module.exports = {
     },
     {value: 'WIP', name: 'WIP:      Work in progress'},
     {value: 'revert', name: 'revert:   Revert to a prior commit'},
-    {value: 'update', name: 'update:     Update dependencies'},
+    {value: 'update', name: 'update:   Update dependencies'},
   ],
 
-  scopes: [{name: 'factory'}, {name: 'pocket'}, {name: 'fuel'}],
+  scopes: [{name: 'factory'}, {name: 'fuel'}, {name: 'extensions'}],
 
   usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
   allowTicketNumber: false,
@@ -44,7 +44,8 @@ module.exports = {
       {name: 'readme'},
     ],
     version: [],
-    update: []
+    update: [],
+    test: [],
   },
   // override the messages, defaults are as follows
   messages: {

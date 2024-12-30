@@ -1,15 +1,24 @@
+@file:Suppress("unused")
+
 package xyz.malefic.compose.engine.fuel
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.TooltipArea
 import androidx.compose.foundation.TooltipPlacement
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
-import xyz.malefic.compose.engine.pocket.*
+import xyz.malefic.compose.engine.factory.BoxFactory
+import xyz.malefic.compose.engine.factory.divAssign
 
 /**
  * Centers the composable function within the `fuel` instance.
@@ -24,7 +33,14 @@ import xyz.malefic.compose.engine.pocket.*
 @Composable
 fun fuel.center(mod: Modifier = Modifier.Companion): fuel =
     this.apply {
-        function = function.center(mod)
+        function = {
+            BoxFactory {
+                this@center()
+            } /= {
+                modifier = mod.fillMaxSize()
+                contentAlignment = Alignment.Center
+            }
+        }
     }
 
 /**
@@ -52,7 +68,16 @@ fun fuel.tooltip(
     tooltip: @Composable () -> Unit,
 ): fuel =
     this.apply {
-        function = function.tooltip(modifier, delayMillis, tooltipPlacement, tooltip)
+        function = {
+            TooltipArea(
+                tooltip,
+                modifier,
+                delayMillis,
+                tooltipPlacement,
+            ) {
+                this@tooltip()
+            }
+        }
     }
 
 /**
@@ -71,7 +96,13 @@ fun fuel.background(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
-        function = function.background(color, mod)
+        function = {
+            BoxFactory {
+                this@background()
+            } /= {
+                modifier = mod.background(color)
+            }
+        }
     }
 
 /**
@@ -92,7 +123,13 @@ fun fuel.outline(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
-        function = function.outline(color, width, mod)
+        function = {
+            BoxFactory {
+                this@outline()
+            } /= {
+                modifier = mod.border(width, color)
+            }
+        }
     }
 
 /**
@@ -110,7 +147,13 @@ fun fuel.padding(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
-        function = function.padding(all, mod)
+        function = {
+            BoxFactory {
+                this@padding()
+            } /= {
+                modifier = mod.padding(all)
+            }
+        }
     }
 
 /**
@@ -130,5 +173,11 @@ fun fuel.padding(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
-        function = function.padding(horizontal, vertical, mod)
+        function = {
+            BoxFactory {
+                this@padding()
+            } /= {
+                modifier = mod.padding(horizontal, vertical)
+            }
+        }
     }

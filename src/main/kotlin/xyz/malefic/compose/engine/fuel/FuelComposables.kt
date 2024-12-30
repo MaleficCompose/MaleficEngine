@@ -1,12 +1,17 @@
 package xyz.malefic.compose.engine.fuel
 
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import xyz.malefic.compose.engine.pocket.divide
-import xyz.malefic.compose.engine.pocket.space
 
 /**
  * Adds a spacer to the composable function within the `fuel` instance.
@@ -24,7 +29,14 @@ fun fuel.space(
     width: Dp? = null,
 ): fuel =
     this.apply {
-        function.space(height, width)
+        function = {
+            this()
+            Spacer(
+                Modifier
+                    .then(if (width != null) Modifier.width(width) else Modifier)
+                    .then(if (height != null) Modifier.height(height) else Modifier),
+            )
+        }
     }
 
 /**
@@ -45,5 +57,14 @@ fun fuel.divide(
     vertical: Boolean = true,
 ): fuel =
     this.apply {
-        function = function.divide(thickness, color, vertical)
+        function = {
+            this()
+            Divider(
+                color = color,
+                modifier =
+                    Modifier
+                        .then(if (vertical) Modifier.width(thickness) else Modifier.height(thickness))
+                        .then(if (vertical) Modifier.fillMaxHeight() else Modifier.fillMaxWidth()),
+            )
+        }
     }

@@ -1,7 +1,6 @@
-package xyz.malefic.compose.engine.pocket
+package xyz.malefic.compose.engine.factory
 
 import androidx.compose.runtime.Composable
-import xyz.malefic.compose.engine.factory.ComposableFactory
 import xyz.malefic.compose.engine.fuel.fuel
 
 /**
