@@ -1,6 +1,10 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:xyz.malefic.compose.engine.factory////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/index.html
+$dokka.location:xyz.malefic.compose.engine.factory//div/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/div.html
+$dokka.location:xyz.malefic.compose.engine.factory//divAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/div-assign.html
+$dokka.location:xyz.malefic.compose.engine.factory//times/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/times.html
+$dokka.location:xyz.malefic.compose.engine.factory//timesAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/times-assign.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/BoxFactory/#androidx.compose.ui.Modifier#androidx.compose.ui.Alignment#kotlin.Boolean#kotlin.Function1[androidx.compose.foundation.layout.BoxScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/-box-factory.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/compose.html
@@ -73,19 +77,5 @@ $dokka.location:xyz.malefic.compose.engine.fuel/fuel/fuel/#kotlin.Function0[kotl
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/function/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/function.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/invoke.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/timesAssign/#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/times-assign.html
-$dokka.location:xyz.malefic.compose.engine.pocket////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/index.html
-$dokka.location:xyz.malefic.compose.engine.pocket//background/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.graphics.Color#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/background.html
-$dokka.location:xyz.malefic.compose.engine.pocket//center/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/center.html
-$dokka.location:xyz.malefic.compose.engine.pocket//div/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/div.html
-$dokka.location:xyz.malefic.compose.engine.pocket//divAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/div-assign.html
-$dokka.location:xyz.malefic.compose.engine.pocket//divide/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp#androidx.compose.ui.graphics.Color#kotlin.Boolean/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/divide.html
-$dokka.location:xyz.malefic.compose.engine.pocket//outline/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.graphics.Color#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/outline.html
-$dokka.location:xyz.malefic.compose.engine.pocket//padding/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/padding.html
-$dokka.location:xyz.malefic.compose.engine.pocket//padding/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/padding.html
-$dokka.location:xyz.malefic.compose.engine.pocket//space/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.unit.Dp?#androidx.compose.ui.unit.Dp?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/space.html
-$dokka.location:xyz.malefic.compose.engine.pocket//times/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/times.html
-$dokka.location:xyz.malefic.compose.engine.pocket//timesAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/times-assign.html
-$dokka.location:xyz.malefic.compose.engine.pocket//tooltip/kotlin.Function0[kotlin.Unit]#androidx.compose.ui.Modifier#kotlin.Int#androidx.compose.foundation.TooltipPlacement#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.pocket/tooltip.html
 xyz.malefic.compose.engine.factory
 xyz.malefic.compose.engine.fuel
-xyz.malefic.compose.engine.pocket
