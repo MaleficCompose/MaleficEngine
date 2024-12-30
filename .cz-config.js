@@ -26,7 +26,7 @@ module.exports = {
     {value: 'update', name: 'update:     Update dependencies'},
   ],
 
-  scopes: [{name: 'factory'}, {name: 'pocket'}, {name: 'util'}],
+  scopes: [{name: 'factory'}, {name: 'pocket'}, {name: 'fuel'}],
 
   usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
   allowTicketNumber: false,

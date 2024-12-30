@@ -11,6 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import xyz.malefic.compose.engine.factory.*
+import xyz.malefic.compose.engine.fuel.center
+import xyz.malefic.compose.engine.fuel.fuel
+import xyz.malefic.compose.engine.fuel.tooltip
 import xyz.malefic.compose.engine.pocket.*
 
 @Suppress("unused")
