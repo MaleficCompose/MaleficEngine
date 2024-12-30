@@ -44,7 +44,9 @@ dependencies {
 }
 ```
 
-Replace `<version>` with the specific version of MaleficEngine you wish to use. The library is published to a local Maven repository located at `xyz.malefic.compose:engine`.
+Replace `<version>` with the specific version of MaleficEngine you wish to use. The library is published to Maven Central at `xyz.malefic.compose:engine`.
+
+![Maven Central Version](https://img.shields.io/maven-central/v/xyz.malefic.compose/engine?link=https%3A%2F%2Fcentral.sonatype.com%2Fartifact%2Fxyz.malefic.compose%2Fengine)
 
 ## Core Concepts
 
