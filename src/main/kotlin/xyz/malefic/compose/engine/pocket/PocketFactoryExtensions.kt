@@ -14,7 +14,7 @@ import xyz.malefic.compose.engine.factory.ComposableFactory
  * @receiver A composable factory instance.
  */
 @Composable
-operator fun <T : ComposableFactory> T.timesAssign(block: T.() -> Unit) {
+operator fun <T : ComposableFactory> T.timesAssign(block: @Composable T.() -> Unit) {
     block()
     this()
 }

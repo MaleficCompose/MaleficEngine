@@ -67,7 +67,7 @@ The `*=` operator, defined in the `PocketFactoryExtensions.kt` file, allows you 
 
 ```kotlin
 @Composable
-operator fun <T : ComposableFactory> T.timesAssign(block: T.() -> Unit) {
+operator fun <T : ComposableFactory> T.timesAssign(block: @Composable T.() -> Unit) {
     block() // Applies the configuration block to the factory
     this()  // Invokes the factory
 }
