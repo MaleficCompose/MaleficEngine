@@ -1,11 +1,21 @@
 package xyz.malefic.compose.engine.factory
 
 import androidx.compose.runtime.Composable
+import xyz.malefic.compose.engine.fuel.fuel
 
 /**
  * An interface for factories that produce a composable function.
  */
 interface ComposableFactory {
+    /**
+     * Provides a `fuel` instance initialized with the composable function
+     * from this factory. This allows invoking the composable logic
+     * through the `fuel` interface, enabling chaining and additional
+     * composable operations.
+     */
+    val fuel: fuel
+        get() = fuel { invoke() }
+
     /**
      * Creates a composable function.
      *

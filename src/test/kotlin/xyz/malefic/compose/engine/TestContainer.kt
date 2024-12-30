@@ -11,8 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import xyz.malefic.compose.engine.factory.*
+import xyz.malefic.compose.engine.fuel.background
 import xyz.malefic.compose.engine.fuel.center
 import xyz.malefic.compose.engine.fuel.fuel
+import xyz.malefic.compose.engine.fuel.outline
+import xyz.malefic.compose.engine.fuel.padding
 import xyz.malefic.compose.engine.fuel.tooltip
 import xyz.malefic.compose.engine.pocket.*
 
@@ -133,6 +136,27 @@ internal class TestContainer {
                         .padding(3.dp)
                         .background(color = Color.Black)
                         .outline(color = Color.Red)()
+                }
+                center()
+            }
+        }
+    }
+
+    @OptIn(ExperimentalFoundationApi::class)
+    @Composable
+    @ComposableTest
+    fun FuelFactoryText() {
+        MaterialTheme {
+            TextFactory("Fuel Composable").fuel * {
+                tooltip {
+                    TextFactory("This is a tooltip for the fuel composable")
+                        .apply {
+                            color = MaterialTheme.colors.background
+                        }.fuel * {
+                        padding(3.dp)
+                        background(MaterialTheme.colors.onBackground)
+                        outline(MaterialTheme.colors.primary)
+                    }
                 }
                 center()
             }
