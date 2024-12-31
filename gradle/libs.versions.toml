@@ -1,13 +1,11 @@
 [versions]
-compose = "1.8.0-alpha01"
+compose = "1.7.3"
 kotlin = "2.1.0"
 kotlinter = "5.0.1"
-kermit = "2.0.5"
 central = "1.2.5"
 dokka = "2.0.0"
 
 [libraries]
-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 [plugins]
 compose-kotlin = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
