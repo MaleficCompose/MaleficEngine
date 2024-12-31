@@ -9,16 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import xyz.malefic.compose.engine.factory.*
-import xyz.malefic.compose.engine.factory.div
-import xyz.malefic.compose.engine.factory.divAssign
-import xyz.malefic.compose.engine.factory.timesAssign
-import xyz.malefic.compose.engine.fuel.background
-import xyz.malefic.compose.engine.fuel.center
-import xyz.malefic.compose.engine.fuel.divide
-import xyz.malefic.compose.engine.fuel.outline
-import xyz.malefic.compose.engine.fuel.padding
-import xyz.malefic.compose.engine.fuel.space
-import xyz.malefic.compose.engine.fuel.tooltip
+import xyz.malefic.compose.engine.fuel.*
 
 @Suppress("unused")
 internal class TestContainer {
@@ -42,7 +33,7 @@ internal class TestContainer {
                         tooltip {
                             TextFactory("Hello!")()
                         }
-                        space(8.dp)
+                        space(50.dp)
                     }
                     ButtonFactory() /= {
                         onClick = {
@@ -105,17 +96,15 @@ internal class TestContainer {
                         divide()
                     }
                     TextFactory("Text 2")()
-                } /=
-                    {
-                        verticalAlignment = Alignment.CenterVertically
-                        horizontalArrangement = Arrangement.Center
-                        modifier = Modifier.fillMaxSize()
-                    }
-            } /=
-                {
-                    contentAlignment = Alignment.Center
+                } /= {
+                    verticalAlignment = Alignment.CenterVertically
+                    horizontalArrangement = Arrangement.Center
                     modifier = Modifier.fillMaxSize()
                 }
+            } /= {
+                contentAlignment = Alignment.Center
+                modifier = Modifier.fillMaxSize()
+            }
         }
 
     @OptIn(ExperimentalFoundationApi::class)

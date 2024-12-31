@@ -7,12 +7,14 @@ import xyz.malefic.compose.engine.fuel.fuel
  * Applies a composable block to the current instance of a `ComposableFactory` and returns the instance.
  * This operator function allows chaining of composable logic using the division operator.
  *
- * If the block needs a @Composable reference, use .apply instead.
- *
  * @param block A composable extension function on the current instance to be executed.
  * @return The current instance after applying the block.
  */
-operator fun <T : ComposableFactory> T.div(block: T.() -> Unit): T = this.apply(block)
+@Composable
+operator fun <T : ComposableFactory> T.div(block: @Composable T.() -> Unit): T {
+    block()
+    return this
+}
 
 /**
  * An operator function that allows a composable factory to be modified
@@ -38,10 +40,11 @@ operator fun <T : ComposableFactory> T.divAssign(block: @Composable T.() -> Unit
  * invoking the main composable function.
  */
 @Composable
-operator fun <T : ComposableFactory> T.times(block: @Composable fuel.() -> Unit) =
-    fuel.apply {
-        block()
-    }
+operator fun <T : ComposableFactory> T.times(block: @Composable fuel.() -> Unit): fuel {
+    val fuel = fuel
+    fuel.block()
+    return fuel
+}
 
 /**
  * Applies a composable block to the `fuel` instance of a `ComposableFactory` and then
@@ -53,7 +56,7 @@ operator fun <T : ComposableFactory> T.times(block: @Composable fuel.() -> Unit)
  */
 @Composable
 operator fun <T : ComposableFactory> T.timesAssign(block: @Composable fuel.() -> Unit) {
-    fuel.apply {
-        block()
-    }()
+    val fuel = fuel
+    fuel.block()
+    fuel()
 }

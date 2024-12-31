@@ -1,10 +1,6 @@
 package xyz.malefic.compose.engine.fuel
 
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -29,8 +25,9 @@ fun fuel.space(
     width: Dp? = null,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
-            this()
+            originalFunction()
             Spacer(
                 Modifier
                     .then(if (width != null) Modifier.width(width) else Modifier)
@@ -57,8 +54,9 @@ fun fuel.divide(
     vertical: Boolean = true,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
-            this()
+            originalFunction()
             Divider(
                 color = color,
                 modifier =

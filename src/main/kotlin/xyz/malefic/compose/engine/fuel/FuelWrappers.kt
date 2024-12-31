@@ -2,11 +2,7 @@
 
 package xyz.malefic.compose.engine.fuel
 
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.TooltipArea
-import androidx.compose.foundation.TooltipPlacement
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -33,9 +29,10 @@ import xyz.malefic.compose.engine.factory.divAssign
 @Composable
 fun fuel.center(mod: Modifier = Modifier.Companion): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             BoxFactory {
-                this@center()
+                originalFunction()
             } /= {
                 modifier = mod.fillMaxSize()
                 contentAlignment = Alignment.Center
@@ -68,6 +65,7 @@ fun fuel.tooltip(
     tooltip: @Composable () -> Unit,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             TooltipArea(
                 tooltip,
@@ -75,7 +73,7 @@ fun fuel.tooltip(
                 delayMillis,
                 tooltipPlacement,
             ) {
-                this@tooltip()
+                originalFunction()
             }
         }
     }
@@ -96,9 +94,10 @@ fun fuel.background(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             BoxFactory {
-                this@background()
+                originalFunction()
             } /= {
                 modifier = mod.background(color)
             }
@@ -123,9 +122,10 @@ fun fuel.outline(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             BoxFactory {
-                this@outline()
+                originalFunction()
             } /= {
                 modifier = mod.border(width, color)
             }
@@ -147,9 +147,10 @@ fun fuel.padding(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             BoxFactory {
-                this@padding()
+                originalFunction()
             } /= {
                 modifier = mod.padding(all)
             }
@@ -173,9 +174,10 @@ fun fuel.padding(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
+        val originalFunction = function
         function = {
             BoxFactory {
-                this@padding()
+                originalFunction()
             } /= {
                 modifier = mod.padding(horizontal, vertical)
             }
