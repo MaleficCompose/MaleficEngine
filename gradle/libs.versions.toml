@@ -2,7 +2,7 @@
 compose = "1.7.3"
 kotlin = "2.1.0"
 kotlinter = "5.0.1"
-central = "1.2.5"
+central = "1.2.6"
 dokka = "2.0.0"
 
 [libraries]
