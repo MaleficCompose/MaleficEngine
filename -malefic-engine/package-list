@@ -55,6 +55,12 @@ $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory///PointingT
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/compose.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/fuel/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/fuel.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/invoke.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/index.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/DialogFactory/#kotlin.Function0[kotlin.Unit]#androidx.compose.ui.window.DialogProperties#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/-dialog-factory.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/compose.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/content.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/onDismissRequest/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/on-dismiss-request.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/properties/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/properties.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/RowFactory/#androidx.compose.ui.Modifier#androidx.compose.foundation.layout.Arrangement.Horizontal#androidx.compose.ui.Alignment.Vertical#kotlin.Function1[androidx.compose.foundation.layout.RowScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/-row-factory.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/compose.html
