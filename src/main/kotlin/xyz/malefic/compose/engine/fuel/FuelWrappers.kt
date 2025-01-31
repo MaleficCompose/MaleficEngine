@@ -4,11 +4,13 @@ package xyz.malefic.compose.engine.fuel
 
 import androidx.annotation.FloatRange
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Indication
 import androidx.compose.foundation.TooltipArea
 import androidx.compose.foundation.TooltipPlacement
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -173,6 +175,48 @@ fun fuel.clickable(
                 originalFunction()
             } /= {
                 modifier = mod.clickable(enabled, onClickLabel, role) { onClick() }
+            }
+        }
+    }
+
+/**
+ * Adds click functionality to the composable function within the `fuel` instance.
+ *
+ * This method wraps the composable function in a Box with a clickable modifier,
+ * allowing it to respond to click events.
+ *
+ * @param interactionSource The interaction source to be used for this clickable area.
+ * @param indication The indication to be shown when the area is clicked.
+ * @param enabled Whether the clickable area is enabled. Defaults to true.
+ * @param onClickLabel The label for the click action, used for accessibility.
+ * @param role The role of the clickable area, used for accessibility.
+ * @param onClick The callback to be invoked when the area is clicked.
+ * @return The `fuel` instance with the clickable functionality applied.
+ */
+@Composable
+fun fuel.clickable(
+    interactionSource: MutableInteractionSource?,
+    indication: Indication?,
+    enabled: Boolean = true,
+    onClickLabel: String? = null,
+    role: Role? = null,
+    onClick: () -> Unit,
+): fuel =
+    this.apply {
+        val originalFunction = function
+        function = {
+            BoxFactory {
+                originalFunction()
+            } /= {
+                modifier =
+                    Modifier.clickable(
+                        interactionSource = interactionSource,
+                        indication = indication,
+                        enabled = enabled,
+                        onClickLabel = onClickLabel,
+                        role = role,
+                        onClick = onClick,
+                    )
             }
         }
     }
