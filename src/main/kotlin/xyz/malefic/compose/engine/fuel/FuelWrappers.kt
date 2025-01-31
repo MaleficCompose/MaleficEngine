@@ -18,6 +18,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
@@ -94,12 +96,14 @@ fun fuel.tooltip(
  * that defaults to the MaterialTheme's background color, allowing for consistent theming.
  *
  * @param color The background color to apply. Defaults to MaterialTheme's background color.
+ * @param shape The shape of the background. Defaults to RectangleShape.
  * @param mod An optional [Modifier] to be applied to the composable function.
  * @return The `fuel` instance with the specified background color applied.
  */
 @Composable
 fun fuel.background(
     color: Color = MaterialTheme.colors.background,
+    shape: Shape = RectangleShape,
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
@@ -108,7 +112,7 @@ fun fuel.background(
             BoxFactory {
                 originalFunction()
             } /= {
-                modifier = mod.background(color)
+                modifier = mod.background(color, shape)
             }
         }
     }
