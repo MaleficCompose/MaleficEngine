@@ -30,6 +30,7 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.common)
+    implementation(libs.androidx.annotation.jvm)
     testImplementation(compose.desktop.currentOs)
     testImplementation(kotlin("test"))
     testImplementation(kotlin("reflect"))

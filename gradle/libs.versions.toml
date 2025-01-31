@@ -4,8 +4,10 @@ kotlin = "2.1.10"
 kotlinter = "5.0.1"
 central = "1.2.6"
 dokka = "2.0.0"
+annotationJvm = "1.9.1"
 
 [libraries]
+androidx-annotation-jvm = { group = "androidx.annotation", name = "annotation-jvm", version.ref = "annotationJvm" }
 
 [plugins]
 compose-kotlin = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
