@@ -12,9 +12,12 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -248,6 +251,58 @@ fun fuel.fillMaxWidth(
     }
 
 /**
+ * Sets the composable function within the `fuel` instance to fill the maximum height.
+ *
+ * This method wraps the composable function in a Box with `fillMaxHeight`
+ * set to the specified fraction, allowing it to fill the available height.
+ *
+ * @param fraction The fraction of the height to fill. Defaults to 1.0 (full height).
+ * @param mod An optional [Modifier] to be applied to the Box.
+ * @return The `fuel` instance with the fillMaxHeight modifier applied.
+ */
+@Composable
+fun fuel.fillMaxHeight(
+    @FloatRange(from = 0.0, to = 1.0) fraction: Float = 1f,
+    mod: Modifier = Modifier.Companion,
+): fuel =
+    this.apply {
+        val originalFunction = function
+        function = {
+            BoxFactory {
+                originalFunction()
+            } /= {
+                modifier = mod.fillMaxHeight(fraction)
+            }
+        }
+    }
+
+/**
+ * Sets the composable function within the `fuel` instance to fill the maximum size.
+ *
+ * This method wraps the composable function in a Box with `fillMaxSize`
+ * set to the specified fraction, allowing it to fill the available size.
+ *
+ * @param fraction The fraction of the size to fill. Defaults to 1.0 (full size).
+ * @param mod An optional [Modifier] to be applied to the Box.
+ * @return The `fuel` instance with the fillMaxSize modifier applied.
+ */
+@Composable
+fun fuel.fillMaxSize(
+    @FloatRange(from = 0.0, to = 1.0) fraction: Float = 1f,
+    mod: Modifier = Modifier.Companion,
+): fuel =
+    this.apply {
+        val originalFunction = function
+        function = {
+            BoxFactory {
+                originalFunction()
+            } /= {
+                modifier = mod.fillMaxSize(fraction)
+            }
+        }
+    }
+
+/**
  * Applies uniform padding to the composable function within the `fuel` instance.
  *
  * This method wraps the composable function in a Box with specified uniform padding.
@@ -351,6 +406,56 @@ fun fuel.padding(
                 originalFunction()
             } /= {
                 modifier = mod.padding(paddingValues)
+            }
+        }
+    }
+
+/**
+ * Sets the composable function within the `fuel` instance to a specified width.
+ *
+ * This method wraps the composable function in a Box with the specified width.
+ *
+ * @param width The width to apply to the Box.
+ * @param mod An optional [Modifier] to be applied to the Box.
+ * @return The `fuel` instance with the specified width applied.
+ */
+@Composable
+fun fuel.width(
+    width: Dp,
+    mod: Modifier = Modifier.Companion,
+): fuel =
+    this.apply {
+        val originalFunction = function
+        function = {
+            BoxFactory {
+                originalFunction()
+            } /= {
+                modifier = mod.width(width)
+            }
+        }
+    }
+
+/**
+ * Sets the composable function within the `fuel` instance to a specified height.
+ *
+ * This method wraps the composable function in a Box with the specified height.
+ *
+ * @param height The height to apply to the Box.
+ * @param mod An optional [Modifier] to be applied to the Box.
+ * @return The `fuel` instance with the specified height applied.
+ */
+@Composable
+fun fuel.height(
+    height: Dp,
+    mod: Modifier = Modifier.Companion,
+): fuel =
+    this.apply {
+        val originalFunction = function
+        function = {
+            BoxFactory {
+                originalFunction()
+            } /= {
+                modifier = mod.height(height)
             }
         }
     }

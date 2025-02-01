@@ -20,7 +20,7 @@ class BoxFactory(
     var modifier: Modifier = Modifier,
     var contentAlignment: Alignment = Alignment.TopStart,
     var propagateMinConstraints: Boolean = false,
-    var content: @Composable BoxScope.() -> Unit,
+    var content: @Composable BoxScope.() -> Unit = {},
 ) : ComposableFactory {
     /**
      * Composes a Box layout with the specified properties.
@@ -31,8 +31,12 @@ class BoxFactory(
     @Composable
     override fun compose(): @Composable () -> Unit =
         {
-            Box(modifier, contentAlignment, propagateMinConstraints) {
-                content()
+            if (content == {}) {
+                Box(modifier)
+            } else {
+                Box(modifier, contentAlignment, propagateMinConstraints) {
+                    content()
+                }
             }
         }
 }
