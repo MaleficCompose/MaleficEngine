@@ -1,15 +1,28 @@
 package xyz.malefic.compose.engine
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import xyz.malefic.compose.engine.factory.*
-import xyz.malefic.compose.engine.fuel.*
+import xyz.malefic.compose.engine.factory.ButtonFactory
+import xyz.malefic.compose.engine.factory.ColumnFactory
+import xyz.malefic.compose.engine.factory.RowFactory
+import xyz.malefic.compose.engine.factory.TextFactory
+import xyz.malefic.compose.engine.factory.div
+import xyz.malefic.compose.engine.factory.divAssign
+import xyz.malefic.compose.engine.factory.timesAssign
+import xyz.malefic.compose.engine.fuel.background
+import xyz.malefic.compose.engine.fuel.center
+import xyz.malefic.compose.engine.fuel.divide
+import xyz.malefic.compose.engine.fuel.outline
+import xyz.malefic.compose.engine.fuel.padding
+import xyz.malefic.compose.engine.fuel.space
+import xyz.malefic.compose.engine.fuel.tooltip
 
 @Suppress("unused")
 internal class TestContainer {
@@ -17,39 +30,35 @@ internal class TestContainer {
     @Composable
     @ComposableTest
     fun ButtonTest() {
-        var buttonText by remember { mutableStateOf("Option 1") }
+        val text1 = "Hello World!"
+        val text2 = "Goodbye World!"
+        var buttonText by remember { mutableStateOf(text1) }
 
         MaterialTheme {
-            BoxFactory {
-                ColumnFactory {
-                    ButtonFactory() / {
-                        onClick = {
-                            buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"
-                        }
-                        content = {
-                            TextFactory(buttonText)()
-                        }
-                    } *= {
-                        tooltip {
-                            TextFactory("Hello!")()
-                        }
-                        space(50.dp)
+            ColumnFactory {
+                ButtonFactory() / {
+                    onClick = {
+                        buttonText = if (buttonText == text1) text2 else text1
                     }
-                    ButtonFactory() /= {
-                        onClick = {
-                            buttonText = if (buttonText == "Option 1") "Option 2" else "Option 1"
-                        }
-                        content = {
-                            TextFactory(buttonText)()
-                        }
+                    content = {
+                        TextFactory(buttonText)()
                     }
-                } /= {
-                    horizontalAlignment = Alignment.CenterHorizontally
-                    verticalArrangement = Arrangement.Center
+                } *= {
+                    tooltip {
+                        TextFactory("Hello!")()
+                    }
+                    space(50.dp)
                 }
-            } /= {
-                contentAlignment = Alignment.Center
-                modifier = Modifier.fillMaxSize()
+                ButtonFactory() /= {
+                    onClick = {
+                        buttonText = if (buttonText == text1) text2 else text1
+                    }
+                    content = {
+                        TextFactory(buttonText)()
+                    }
+                }
+            } *= {
+                center()
             }
         }
     }
@@ -59,26 +68,22 @@ internal class TestContainer {
     @ComposableTest
     fun TextTest() =
         MaterialTheme {
-            BoxFactory {
-                ColumnFactory {
-                    TextFactory("Text 1") *= {
-                        tooltip {
-                            TextFactory("This is the tooltip of the first text component.") *= {
-                                padding(3.dp)
-                                background()
-                                outline()()
-                            }
+            ColumnFactory {
+                TextFactory("Text 1") *= {
+                    tooltip {
+                        TextFactory("This is the tooltip of the first text component.") *= {
+                            padding(3.dp)
+                            background()
+                            outline()()
                         }
-                        divide(vertical = false)
                     }
-                    TextFactory("Text 2")()
-                } /= {
-                    horizontalAlignment = Alignment.CenterHorizontally
-                    verticalArrangement = Arrangement.Center
+                    divide(vertical = false)
                 }
-            } /= {
-                contentAlignment = Alignment.Center
-                modifier = Modifier.fillMaxSize()
+                TextFactory("Text 2")()
+            } / {
+                horizontalAlignment = Alignment.CenterHorizontally
+            } *= {
+                center()
             }
         }
 
@@ -87,23 +92,18 @@ internal class TestContainer {
     @ComposableTest
     fun TextTest2() =
         MaterialTheme {
-            BoxFactory {
-                RowFactory {
-                    TextFactory("Text 1") *= {
-                        tooltip {
-                            TextFactory("This is the tooltip of the first text component.")()
-                        }
-                        divide()
+            RowFactory {
+                TextFactory("Text 1") *= {
+                    tooltip {
+                        TextFactory("This is the tooltip of the first text component.")()
                     }
-                    TextFactory("Text 2")()
-                } /= {
-                    verticalAlignment = Alignment.CenterVertically
-                    horizontalArrangement = Arrangement.Center
-                    modifier = Modifier.fillMaxSize()
+                    divide()
                 }
-            } /= {
-                contentAlignment = Alignment.Center
-                modifier = Modifier.fillMaxSize()
+                TextFactory("Text 2")()
+            } / {
+                verticalAlignment = Alignment.CenterVertically
+            } *= {
+                center()
             }
         }
 

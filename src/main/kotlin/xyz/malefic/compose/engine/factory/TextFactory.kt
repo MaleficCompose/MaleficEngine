@@ -62,6 +62,8 @@ class TextFactory(
     var onTextLayout: ((TextLayoutResult) -> Unit)? = null,
     var style: TextStyle? = null,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Creates a Composable Text with customizable properties.
      *
@@ -77,7 +79,7 @@ class TextFactory(
         {
             Text(
                 text = text,
-                modifier = modifier,
+                modifier = mods.combined,
                 color = color,
                 fontSize = fontSize,
                 fontStyle = fontStyle,

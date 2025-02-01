@@ -43,14 +43,13 @@ import xyz.malefic.compose.engine.factory.divAssign
  * @return The `fuel` instance with centered content.
  */
 @Composable
-fun fuel.center(mod: Modifier = Modifier.Companion): fuel =
+fun fuel.center(mod: Modifier = Modifier.Companion) =
     this.apply {
-        val originalFunction = function
-        function = {
+        wrappers += @Composable { function ->
             BoxFactory {
-                originalFunction()
+                function()
             } /= {
-                modifier = mod.fillMaxSize()
+                mods += mod.fillMaxSize()
                 contentAlignment = Alignment.Center
             }
         }
@@ -79,20 +78,18 @@ fun fuel.tooltip(
             offset = DpOffset(0.dp, 16.dp),
         ),
     tooltip: @Composable () -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            TooltipArea(
-                tooltip,
-                modifier,
-                delayMillis,
-                tooltipPlacement,
-            ) {
-                originalFunction()
-            }
+) = this.apply {
+    wrappers += @Composable { function ->
+        TooltipArea(
+            tooltip,
+            modifier,
+            delayMillis,
+            tooltipPlacement,
+        ) {
+            function()
         }
     }
+}
 
 /**
  * Applies a background color to the composable function within the `fuel` instance.
@@ -110,17 +107,7 @@ fun fuel.background(
     color: Color = MaterialTheme.colors.background,
     shape: Shape = RectangleShape,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.background(color, shape)
-            }
-        }
-    }
+) = mod(mod.background(color, shape))
 
 /**
  * Adds an outline to the composable function within the `fuel` instance.
@@ -138,17 +125,7 @@ fun fuel.outline(
     color: Color = MaterialTheme.colors.onBackground,
     width: Dp = 1.dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.border(width, color)
-            }
-        }
-    }
+) = mod(mod.border(width, color))
 
 /**
  * Adds click functionality to the composable function within the `fuel` instance.
@@ -170,17 +147,7 @@ fun fuel.clickable(
     onClickLabel: String? = null,
     role: Role? = null,
     onClick: () -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.clickable(enabled, onClickLabel, role) { onClick() }
-            }
-        }
-    }
+) = mod(mod.clickable(enabled, onClickLabel, role) { onClick() })
 
 /**
  * Adds click functionality to the composable function within the `fuel` instance.
@@ -198,31 +165,23 @@ fun fuel.clickable(
  */
 @Composable
 fun fuel.clickable(
+    mod: Modifier = Modifier.Companion,
     interactionSource: MutableInteractionSource?,
     indication: Indication?,
     enabled: Boolean = true,
     onClickLabel: String? = null,
     role: Role? = null,
     onClick: () -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier =
-                    Modifier.clickable(
-                        interactionSource = interactionSource,
-                        indication = indication,
-                        enabled = enabled,
-                        onClickLabel = onClickLabel,
-                        role = role,
-                        onClick = onClick,
-                    )
-            }
-        }
-    }
+) = mod(
+    mod.clickable(
+        interactionSource = interactionSource,
+        indication = indication,
+        enabled = enabled,
+        onClickLabel = onClickLabel,
+        role = role,
+        onClick = onClick,
+    ),
+)
 
 /**
  * Sets the composable function within the `fuel` instance to fill the maximum width.
@@ -238,17 +197,7 @@ fun fuel.clickable(
 fun fuel.fillMaxWidth(
     @FloatRange(from = 0.0, to = 1.0) fraction: Float = 1f,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.fillMaxWidth(fraction)
-            }
-        }
-    }
+) = mod(mod.fillMaxWidth(fraction))
 
 /**
  * Sets the composable function within the `fuel` instance to fill the maximum height.
@@ -264,17 +213,7 @@ fun fuel.fillMaxWidth(
 fun fuel.fillMaxHeight(
     @FloatRange(from = 0.0, to = 1.0) fraction: Float = 1f,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.fillMaxHeight(fraction)
-            }
-        }
-    }
+) = mod(mod.fillMaxHeight(fraction))
 
 /**
  * Sets the composable function within the `fuel` instance to fill the maximum size.
@@ -290,17 +229,7 @@ fun fuel.fillMaxHeight(
 fun fuel.fillMaxSize(
     @FloatRange(from = 0.0, to = 1.0) fraction: Float = 1f,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.fillMaxSize(fraction)
-            }
-        }
-    }
+) = mod(mod.fillMaxSize(fraction))
 
 /**
  * Applies uniform padding to the composable function within the `fuel` instance.
@@ -315,17 +244,7 @@ fun fuel.fillMaxSize(
 fun fuel.padding(
     all: Dp = 0.dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.padding(all)
-            }
-        }
-    }
+) = mod(mod.padding(all))
 
 /**
  * Applies horizontal and vertical padding to the composable function within the `fuel` instance.
@@ -342,17 +261,7 @@ fun fuel.padding(
     horizontal: Dp = 0.dp,
     vertical: Dp = 0.dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.padding(horizontal, vertical)
-            }
-        }
-    }
+) = mod(mod.padding(horizontal, vertical))
 
 /**
  * Applies padding to the composable function within the `fuel` instance.
@@ -373,17 +282,7 @@ fun fuel.padding(
     end: Dp = 0.dp,
     bottom: Dp = 0.dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.padding(start, top, end, bottom)
-            }
-        }
-    }
+) = mod(mod.padding(start, top, end, bottom))
 
 /**
  * Applies padding values to the composable function within the `fuel` instance.
@@ -398,17 +297,7 @@ fun fuel.padding(
 fun fuel.padding(
     paddingValues: PaddingValues,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.padding(paddingValues)
-            }
-        }
-    }
+) = mod(mod.padding(paddingValues))
 
 /**
  * Sets the composable function within the `fuel` instance to a specified width.
@@ -423,17 +312,7 @@ fun fuel.padding(
 fun fuel.width(
     width: Dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.width(width)
-            }
-        }
-    }
+) = mod(mod.width(width))
 
 /**
  * Sets the composable function within the `fuel` instance to a specified height.
@@ -448,14 +327,4 @@ fun fuel.width(
 fun fuel.height(
     height: Dp,
     mod: Modifier = Modifier.Companion,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            BoxFactory {
-                originalFunction()
-            } /= {
-                modifier = mod.height(height)
-            }
-        }
-    }
+) = mod(mod.height(height))

@@ -1,6 +1,7 @@
 package xyz.malefic.compose.engine.factory
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import xyz.malefic.compose.engine.fuel.fuel
 
 /**
@@ -14,7 +15,8 @@ interface ComposableFactory {
      * composable operations.
      */
     val fuel: fuel
-        get() = fuel { invoke() }
+        get() = fuel(this)
+    var mods: List<Modifier>
 
     /**
      * Creates a composable function.

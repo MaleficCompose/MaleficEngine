@@ -1,6 +1,7 @@
 package xyz.malefic.compose.engine.factory
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 
@@ -12,10 +13,13 @@ import androidx.compose.ui.window.DialogProperties
  * @property content The composable content to be displayed inside the dialog.
  */
 class DialogFactory(
+    var modifier: Modifier = Modifier.Companion,
     var onDismissRequest: () -> Unit,
     var properties: DialogProperties,
     var content: @Composable () -> Unit,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes the dialog with the specified properties and content.
      *
@@ -24,8 +28,12 @@ class DialogFactory(
     @Composable
     override fun compose(): @Composable () -> Unit =
         {
-            Dialog(onDismissRequest, properties) {
-                content()
+            BoxFactory {
+                Dialog(onDismissRequest, properties) {
+                    content()
+                }
+            } /= {
+                modifier = mods.combined
             }
         }
 }

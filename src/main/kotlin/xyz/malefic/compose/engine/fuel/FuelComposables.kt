@@ -41,9 +41,8 @@ fun fuel.space(
     width: Dp? = null,
 ): fuel =
     this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
+        wrappers += @Composable { function ->
+            function()
             Spacer(
                 Modifier
                     .then(if (width != null) Modifier.width(width) else Modifier)
@@ -72,9 +71,8 @@ fun fuel.divide(
     mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
+        wrappers += @Composable { function ->
+            function()
             BoxFactory() *= {
                 background(
                     color,
@@ -98,11 +96,10 @@ fun fuel.divide(
  * @return The `fuel` instance with the added text element.
  */
 @Composable
-fun fuel.text(text: String): fuel =
+fun fuel.text(text: String) =
     this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
+        wrappers += @Composable { function ->
+            function()
             Text(text = text)
         }
     }
@@ -118,16 +115,14 @@ fun fuel.text(text: String): fuel =
 fun fuel.button(
     onClick: () -> Unit,
     content: @Composable () -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
-            Button(onClick = onClick) {
-                content()
-            }
+) = this.apply {
+    wrappers += @Composable { function ->
+        function()
+        Button(onClick = onClick) {
+            content()
         }
     }
+}
 
 /**
  * Adds an image element to the composable function within the `fuel` instance.
@@ -140,14 +135,12 @@ fun fuel.button(
 fun fuel.image(
     painter: Painter,
     contentDescription: String?,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
-            Image(painter = painter, contentDescription = contentDescription)
-        }
+) = this.apply {
+    wrappers += @Composable { function ->
+        function()
+        Image(painter = painter, contentDescription = contentDescription)
     }
+}
 
 /**
  * Adds a row layout to the composable function within the `fuel` instance.
@@ -164,20 +157,18 @@ fun fuel.row(
     horizontal: Arrangement.Horizontal = Arrangement.Start,
     vertical: Alignment.Vertical = Alignment.Top,
     content: @Composable RowScope.() -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
-            RowFactory {
-                content()
-            } /= {
-                modifier = mod
-                horizontalArrangement = horizontal
-                verticalAlignment = vertical
-            }
+) = this.apply {
+    wrappers += @Composable { function ->
+        function()
+        RowFactory {
+            content()
+        } /= {
+            modifier = mod
+            horizontalArrangement = horizontal
+            verticalAlignment = vertical
         }
     }
+}
 
 /**
  * Adds a column layout to the composable function within the `fuel` instance.
@@ -194,13 +185,11 @@ fun fuel.column(
     verticalArrangement: Arrangement.Vertical = Arrangement.Top,
     horizontalAlignment: Alignment.Horizontal = Alignment.Start,
     content: @Composable ColumnScope.() -> Unit,
-): fuel =
-    this.apply {
-        val originalFunction = function
-        function = {
-            originalFunction()
-            Column(modifier, verticalArrangement, horizontalAlignment) {
-                content()
-            }
+) = this.apply {
+    wrappers += @Composable { function ->
+        function()
+        Column(modifier, verticalArrangement, horizontalAlignment) {
+            content()
         }
     }
+}

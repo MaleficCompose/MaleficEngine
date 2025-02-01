@@ -60,6 +60,8 @@ class TextFieldFactory(
     var shape: Shape? = null,
     var colors: TextFieldColors? = null,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes a `TextField` with the specified properties.
      *
@@ -76,7 +78,7 @@ class TextFieldFactory(
             TextField(
                 value = value,
                 onValueChange = onValueChange,
-                modifier = modifier,
+                modifier = mods.combined,
                 enabled = enabled,
                 readOnly = readOnly,
                 textStyle = textStyle ?: LocalTextStyle.current,

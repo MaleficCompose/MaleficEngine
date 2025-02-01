@@ -4,7 +4,11 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ButtonElevation
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
@@ -37,6 +41,8 @@ class ButtonFactory(
     var contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
     var content: @Composable RowScope.() -> Unit = {},
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Creates a Composable Button with customizable properties.
      *
@@ -54,7 +60,7 @@ class ButtonFactory(
         {
             Button(
                 onClick = onClick,
-                modifier = modifier,
+                modifier = mods.combined,
                 enabled = enabled,
                 interactionSource = interactionSource,
                 elevation = elevation ?: ButtonDefaults.elevation(),

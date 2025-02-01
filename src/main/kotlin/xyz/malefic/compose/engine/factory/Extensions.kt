@@ -1,6 +1,7 @@
 package xyz.malefic.compose.engine.factory
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import xyz.malefic.compose.engine.fuel.fuel
 
 /**
@@ -60,3 +61,26 @@ operator fun <T : ComposableFactory> T.timesAssign(block: @Composable fuel.() ->
     fuel.block()
     fuel()
 }
+
+/**
+ * Combines all modifiers in the list into a single Modifier.
+ *
+ * @receiver List of Modifier instances to be combined.
+ * @return A single Modifier containing all the modifiers in the list.
+ */
+private fun List<Modifier>.combine(): Modifier = if (isEmpty()) Modifier else reduce { acc, modifier -> acc.then(modifier) }
+
+/**
+ * Combines all modifiers in the list into a single Modifier.
+ *
+ * @receiver List of Modifier instances to be combined.
+ * @return A single Modifier containing all the modifiers in the list.
+ */
+val List<Modifier>.combined: Modifier
+    get() = combine()
+
+/**
+ * Invokes all composable functions in the list.
+ */
+@Composable
+fun List<@Composable () -> Unit>.invokeAll() = forEach { it() }

@@ -36,6 +36,8 @@ class CardFactory(
     var elevation: Dp = 1.dp,
     var content: @Composable () -> Unit,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes a Card with the specified properties.
      *
@@ -47,7 +49,7 @@ class CardFactory(
     override fun compose(): @Composable () -> Unit =
         {
             Card(
-                modifier = modifier,
+                modifier = mods.combined,
                 shape = shape ?: MaterialTheme.shapes.medium,
                 backgroundColor = backgroundColor ?: MaterialTheme.colors.surface,
                 contentColor = contentColor ?: contentColorFor(backgroundColor ?: MaterialTheme.colors.surface),

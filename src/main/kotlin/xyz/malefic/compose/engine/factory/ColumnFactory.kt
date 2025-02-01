@@ -27,6 +27,8 @@ class ColumnFactory(
     var horizontalAlignment: Alignment.Horizontal = Alignment.Start,
     var content: @Composable ColumnScope.() -> Unit,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Creates a composable lambda function that renders a Column layout
      * with the specified modifier, vertical arrangement, and horizontal alignment.
@@ -37,7 +39,7 @@ class ColumnFactory(
     @Composable
     override fun compose(): @Composable () -> Unit =
         {
-            Column(modifier, verticalArrangement, horizontalAlignment) {
+            Column(mods.combined, verticalArrangement, horizontalAlignment) {
                 content()
             }
         }

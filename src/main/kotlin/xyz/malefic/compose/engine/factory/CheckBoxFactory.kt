@@ -30,6 +30,8 @@ class CheckBoxFactory(
     var interactionSource: MutableInteractionSource? = null,
     var colors: CheckboxColors? = null,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes a `CheckBox` with the specified configuration.
      *
@@ -46,7 +48,7 @@ class CheckBoxFactory(
             Checkbox(
                 checked = checked,
                 onCheckedChange = onCheckedChange,
-                modifier = modifier,
+                modifier = mods.combined,
                 enabled = enabled,
                 interactionSource = interactionSource,
                 colors = colors ?: CheckboxDefaults.colors(),

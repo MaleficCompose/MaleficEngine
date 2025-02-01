@@ -64,6 +64,8 @@ class ScaffoldFactory(
     var contentColor: Color? = null,
     var content: @Composable (PaddingValues) -> Unit,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes a `Scaffold` with the specified configuration.
      *
@@ -78,7 +80,7 @@ class ScaffoldFactory(
     override fun compose(): @Composable () -> Unit =
         {
             Scaffold(
-                modifier = modifier,
+                modifier = mods.combined,
                 scaffoldState = scaffoldState ?: rememberScaffoldState(),
                 topBar = topBar,
                 bottomBar = bottomBar,

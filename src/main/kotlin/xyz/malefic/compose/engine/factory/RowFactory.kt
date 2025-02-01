@@ -27,6 +27,8 @@ class RowFactory(
     var verticalAlignment: Alignment.Vertical = Alignment.Top,
     var content: @Composable RowScope.() -> Unit,
 ) : ComposableFactory {
+    override var mods = listOf(modifier)
+
     /**
      * Composes a Row layout with the specified modifier, horizontal arrangement,
      * vertical alignment, and content. This method returns a composable function
@@ -37,7 +39,7 @@ class RowFactory(
     @Composable
     override fun compose(): @Composable () -> Unit =
         {
-            Row(modifier, horizontalArrangement, verticalAlignment) {
+            Row(mods.combined, horizontalArrangement, verticalAlignment) {
                 content()
             }
         }
