@@ -20,15 +20,15 @@ jobs:
         run: |
           # Get the latest commit message
           COMMIT_MSG=$(git log -1 --pretty=%B)
-          
+
           # Check if commit message matches version pattern
           if [[ $COMMIT_MSG =~ ^version\(([0-9]+\.[0-9]+\.[0-9]+)\):.*$ ]]; then
             VERSION="${BASH_REMATCH[1]}"
             echo "Version $VERSION detected in commit message"
-          
+
             # Get the latest tag
             LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
-          
+
             # Generate changelog
             if [ "$LATEST_TAG" = "none" ]; then
               # If no previous tag exists, use all commits
@@ -41,7 +41,7 @@ jobs:
               # Get contributors since last tag
               CONTRIBUTORS=$(git log ${LATEST_TAG}..HEAD --format="%aN <%aE>" --no-merges | sort -u)
             fi
-          
+
             # Create a temporary file for the release notes
             {
               echo "# Changelog for version $VERSION"
@@ -53,10 +53,14 @@ jobs:
               echo "Thank you to all contributors for this release:"
               echo ""
               while IFS= read -r contributor; do
-                echo "* $contributor"
+                # Extract the GitHub username from the email
+                USERNAME=$(echo $contributor | grep -oP '(?<=<).*(?=@)')
+                # Fetch the avatar URL using the GitHub API
+                AVATAR_URL=$(curl -s https://api.github.com/users/$USERNAME | jq -r .avatar_url)
+                echo "* ![${USERNAME}](${AVATAR_URL}) $contributor"
               done <<< "$CONTRIBUTORS"
             } > changelog.md
-          
+
             # Create GitHub release
             gh release create "v$VERSION" \
               --title "Version $VERSION" \
