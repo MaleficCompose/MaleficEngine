@@ -52,15 +52,15 @@ jobs:
                 NAME=$(echo "$contributor" | sed -E 's/(.*) <.*/\1/')
                 EMAIL=$(echo "$contributor" | sed -E 's/.* <(.*)>/\1/')
                 USERNAME=$(gh api "https://api.github.com/search/users?q=$EMAIL+in:email" --jq ".items[0].login" || echo "Unknown")
-          
+              
                 if [ "$USERNAME" != "Unknown" ]; then
-                  AVATAR_URL="https://github.com/$USERNAME.png"
-                  echo "* ![$NAME]($AVATAR_URL) **[$NAME](https://github.com/$USERNAME)**"
+                AVATAR_URL="https://github.com/$USERNAME.png"
+                echo "* <img src=\"$AVATAR_URL\" width=\"16\" height=\"16\" style=\"border-radius:50%; vertical-align:middle;\"> **[$NAME](https://github.com/$USERNAME)**"
                 else
-                  echo "* $NAME (Email: $EMAIL)"
+                echo "* $NAME (Email: $EMAIL)"
                 fi
-              done <<< "$CONTRIBUTORS"
-            } > changelog.md
+                done <<< "$CONTRIBUTORS"
+              } > changelog.md
 
             # Create GitHub release
             gh release create "v$VERSION" \
