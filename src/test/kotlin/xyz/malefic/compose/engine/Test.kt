@@ -18,7 +18,7 @@ fun main() {
     }
 
     print("Enter the number of the test to run: ")
-    val choice = readLine()?.toIntOrNull()
+    val choice = readlnOrNull()?.toIntOrNull()
 
     if (choice != null && choice in 1..testFunctions.size) {
         val selectedFunction = testFunctions[choice - 1]
