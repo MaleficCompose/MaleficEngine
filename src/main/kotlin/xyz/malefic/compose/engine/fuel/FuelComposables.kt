@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,8 +20,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import xyz.malefic.compose.engine.factory.BoxFactory
 import xyz.malefic.compose.engine.factory.RowFactory
 import xyz.malefic.compose.engine.factory.divAssign
+import xyz.malefic.compose.engine.factory.timesAssign
 
 /**
  * Adds a spacer to the composable function within the `fuel` instance.
@@ -60,6 +61,7 @@ fun fuel.space(
  * @param thickness The thickness of the divider. Defaults to 1.dp.
  * @param color The color of the divider. Defaults to the color that goes on the background of the material theme.
  * @param vertical Whether the divider should be vertical. Defaults to true.
+ * @param mod An optional [Modifier] to apply to the divider.
  * @return The `fuel` instance with the added divider.
  */
 @Composable
@@ -67,18 +69,25 @@ fun fuel.divide(
     thickness: Dp = 1.dp,
     color: Color = MaterialTheme.colors.onBackground,
     vertical: Boolean = true,
+    mod: Modifier = Modifier.Companion,
 ): fuel =
     this.apply {
         val originalFunction = function
         function = {
             originalFunction()
-            Divider(
-                color = color,
-                modifier =
-                    Modifier
-                        .then(if (vertical) Modifier.width(thickness) else Modifier.height(thickness))
-                        .then(if (vertical) Modifier.fillMaxHeight() else Modifier.fillMaxWidth()),
-            )
+            BoxFactory() *= {
+                background(
+                    color,
+                    mod =
+                        mod.then(
+                            if (vertical) {
+                                Modifier.fillMaxHeight().width(thickness)
+                            } else {
+                                Modifier.fillMaxWidth().height(thickness)
+                            },
+                        ),
+                )
+            }
         }
     }
 
