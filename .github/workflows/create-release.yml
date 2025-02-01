@@ -20,25 +20,21 @@ jobs:
         run: |
           # Get the latest commit message
           COMMIT_MSG=$(git log -1 --pretty=%B)
-
+          
           # Check if commit message matches version pattern
           if [[ $COMMIT_MSG =~ ^version\(([0-9]+\.[0-9]+\.[0-9]+)\):.*$ ]]; then
             VERSION="${BASH_REMATCH[1]}"
             echo "Version $VERSION detected in commit message"
-
+          
             # Get the latest tag
             LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
-
+          
             # Generate changelog
             if [ "$LATEST_TAG" = "none" ]; then
-              # If no previous tag exists, use all commits
               CHANGELOG=$(git log --pretty=format:"* %s (%h)" --no-merges)
-              # Get all unique contributors
               CONTRIBUTORS=$(git log --format="%aN <%aE>" --no-merges | sort -u)
             else
-              # Get commits since last tag
               CHANGELOG=$(git log --pretty=format:"* %s (%h)" --no-merges ${LATEST_TAG}..HEAD)
-              # Get contributors since last tag
               CONTRIBUTORS=$(git log ${LATEST_TAG}..HEAD --format="%aN <%aE>" --no-merges | sort -u)
             fi
 
@@ -53,11 +49,16 @@ jobs:
               echo "Thank you to all contributors for this release:"
               echo ""
               while IFS= read -r contributor; do
-                # Extract the GitHub username from the email
-                USERNAME=$(echo $contributor | grep -oP '(?<=<).*(?=@)')
-                # Fetch the avatar URL using the GitHub API
-                AVATAR_URL=$(curl -s https://api.github.com/users/$USERNAME | jq -r .avatar_url)
-                echo "* ![${USERNAME}](${AVATAR_URL}) $contributor"
+                NAME=$(echo "$contributor" | sed -E 's/(.*) <.*/\1/')
+                EMAIL=$(echo "$contributor" | sed -E 's/.* <(.*)>/\1/')
+                USERNAME=$(gh api "https://api.github.com/search/users?q=$EMAIL+in:email" --jq ".items[0].login" || echo "Unknown")
+          
+                if [ "$USERNAME" != "Unknown" ]; then
+                  AVATAR_URL="https://github.com/$USERNAME.png"
+                  echo "* ![$NAME]($AVATAR_URL) **[$NAME](https://github.com/$USERNAME)**"
+                else
+                  echo "* $NAME (Email: $EMAIL)"
+                fi
               done <<< "$CONTRIBUTORS"
             } > changelog.md
 
