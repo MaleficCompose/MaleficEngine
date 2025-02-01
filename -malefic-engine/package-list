@@ -1,8 +1,10 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:xyz.malefic.compose.engine.factory////PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/index.html
+$dokka.location:xyz.malefic.compose.engine.factory//combined/kotlin.collections.List[androidx.compose.ui.Modifier]#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/combined.html
 $dokka.location:xyz.malefic.compose.engine.factory//div/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/div.html
 $dokka.location:xyz.malefic.compose.engine.factory//divAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory]),kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/div-assign.html
+$dokka.location:xyz.malefic.compose.engine.factory//invokeAll/kotlin.collections.List[kotlin.Function0[kotlin.Unit]]#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/invoke-all.html
 $dokka.location:xyz.malefic.compose.engine.factory//times/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/times.html
 $dokka.location:xyz.malefic.compose.engine.factory//timesAssign/TypeParam(bounds=[xyz.malefic.compose.engine.factory.ComposableFactory])#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/times-assign.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/index.html
@@ -11,6 +13,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/compose/#/Pointing
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/content.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/contentAlignment/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/content-alignment.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/BoxFactory/propagateMinConstraints/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-box-factory/propagate-min-constraints.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/ButtonFactory/#kotlin.Function0[kotlin.Unit]#androidx.compose.ui.Modifier#kotlin.Boolean#androidx.compose.foundation.interaction.MutableInteractionSource?#androidx.compose.material.ButtonElevation?#androidx.compose.ui.graphics.Shape?#androidx.compose.foundation.BorderStroke?#androidx.compose.material.ButtonColors?#androidx.compose.foundation.layout.PaddingValues#kotlin.Function1[androidx.compose.foundation.layout.RowScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/-button-factory.html
@@ -23,6 +26,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/elevation/#/Poi
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/enabled/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/enabled.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/interactionSource/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/interaction-source.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/onClick/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/on-click.html
 $dokka.location:xyz.malefic.compose.engine.factory/ButtonFactory/shape/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-button-factory/shape.html
 $dokka.location:xyz.malefic.compose.engine.factory/CardFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/index.html
@@ -34,6 +38,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/CardFactory/content/#/Pointin
 $dokka.location:xyz.malefic.compose.engine.factory/CardFactory/contentColor/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/content-color.html
 $dokka.location:xyz.malefic.compose.engine.factory/CardFactory/elevation/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/elevation.html
 $dokka.location:xyz.malefic.compose.engine.factory/CardFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/CardFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/CardFactory/shape/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-card-factory/shape.html
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/CheckBoxFactory/#kotlin.Boolean#kotlin.Function1[kotlin.Boolean,kotlin.Unit]?#androidx.compose.ui.Modifier#kotlin.Boolean#androidx.compose.foundation.interaction.MutableInteractionSource?#androidx.compose.material.CheckboxColors?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/-check-box-factory.html
@@ -43,6 +48,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/compose/#/Poi
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/enabled/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/enabled.html
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/interactionSource/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/interaction-source.html
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/CheckBoxFactory/onCheckedChange/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-check-box-factory/on-checked-change.html
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/ColumnFactory/#androidx.compose.ui.Modifier#androidx.compose.foundation.layout.Arrangement.Vertical#androidx.compose.ui.Alignment.Horizontal#kotlin.Function1[androidx.compose.foundation.layout.ColumnScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/-column-factory.html
@@ -50,15 +56,19 @@ $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/compose/#/Point
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/content.html
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/horizontalAlignment/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/horizontal-alignment.html
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/ColumnFactory/verticalArrangement/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-column-factory/vertical-arrangement.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/compose.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/fuel/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/fuel.html
 $dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/invoke.html
+$dokka.location:xyz.malefic.compose.engine.factory/ComposableFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-composable-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/DialogFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/index.html
-$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/DialogFactory/#kotlin.Function0[kotlin.Unit]#androidx.compose.ui.window.DialogProperties#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/-dialog-factory.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/DialogFactory/#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]#androidx.compose.ui.window.DialogProperties#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/-dialog-factory.html
 $dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/compose/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/compose.html
 $dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/content.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/onDismissRequest/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/on-dismiss-request.html
 $dokka.location:xyz.malefic.compose.engine.factory/DialogFactory/properties/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-dialog-factory/properties.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/index.html
@@ -67,6 +77,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/compose/#/Pointing
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/content/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/content.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/horizontalArrangement/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/horizontal-arrangement.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/RowFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/RowFactory/verticalAlignment/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-row-factory/vertical-alignment.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/index.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/ScaffoldFactory/#androidx.compose.ui.Modifier#androidx.compose.material.ScaffoldState?#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function1[androidx.compose.material.SnackbarHostState,kotlin.Unit]#kotlin.Function0[kotlin.Unit]#androidx.compose.material.FabPosition#kotlin.Boolean#kotlin.Function1[androidx.compose.foundation.layout.ColumnScope,kotlin.Unit]?#kotlin.Boolean#androidx.compose.ui.graphics.Shape?#androidx.compose.ui.unit.Dp#androidx.compose.ui.graphics.Color?#androidx.compose.ui.graphics.Color?#androidx.compose.ui.graphics.Color?#androidx.compose.ui.graphics.Color?#androidx.compose.ui.graphics.Color?#kotlin.Function1[androidx.compose.foundation.layout.PaddingValues,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/-scaffold-factory.html
@@ -86,6 +97,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/floatingActio
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/floatingActionButtonPosition/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/floating-action-button-position.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/isFloatingActionButtonDocked/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/is-floating-action-button-docked.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/scaffoldState/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/scaffold-state.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/snackbarHost/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/snackbar-host.html
 $dokka.location:xyz.malefic.compose.engine.factory/ScaffoldFactory/topBar/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-scaffold-factory/top-bar.html
@@ -102,6 +114,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/lineHeight/#/Poin
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/maxLines/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/max-lines.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/minLines/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/min-lines.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/TextFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/onTextLayout/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/on-text-layout.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/overflow/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/overflow.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFactory/softWrap/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-factory/soft-wrap.html
@@ -123,6 +136,7 @@ $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/leadingIcon/
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/maxLines/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/max-lines.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/minLines/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/min-lines.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/modifier/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/modifier.html
+$dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/mods/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/mods.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/onValueChange/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/on-value-change.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/placeholder/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/placeholder.html
 $dokka.location:xyz.malefic.compose.engine.factory/TextFieldFactory/readOnly/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.factory/-text-field-factory/read-only.html
@@ -136,7 +150,7 @@ $dokka.location:xyz.malefic.compose.engine.fuel////PointingToDeclaration/-malef
 $dokka.location:xyz.malefic.compose.engine.fuel//background/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Shape#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/background.html
 $dokka.location:xyz.malefic.compose.engine.fuel//button/xyz.malefic.compose.engine.fuel.fuel#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/button.html
 $dokka.location:xyz.malefic.compose.engine.fuel//center/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/center.html
-$dokka.location:xyz.malefic.compose.engine.fuel//clickable/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.foundation.interaction.MutableInteractionSource?#androidx.compose.foundation.Indication?#kotlin.Boolean#kotlin.String?#androidx.compose.ui.semantics.Role?#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/clickable.html
+$dokka.location:xyz.malefic.compose.engine.fuel//clickable/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.Modifier#androidx.compose.foundation.interaction.MutableInteractionSource?#androidx.compose.foundation.Indication?#kotlin.Boolean#kotlin.String?#androidx.compose.ui.semantics.Role?#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/clickable.html
 $dokka.location:xyz.malefic.compose.engine.fuel//clickable/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.Modifier#kotlin.Boolean#kotlin.String?#androidx.compose.ui.semantics.Role?#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/clickable.html
 $dokka.location:xyz.malefic.compose.engine.fuel//column/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.Modifier#androidx.compose.foundation.layout.Arrangement.Vertical#androidx.compose.ui.Alignment.Horizontal#kotlin.Function1[androidx.compose.foundation.layout.ColumnScope,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/column.html
 $dokka.location:xyz.malefic.compose.engine.fuel//divide/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.unit.Dp#androidx.compose.ui.graphics.Color#kotlin.Boolean#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/divide.html
@@ -155,11 +169,15 @@ $dokka.location:xyz.malefic.compose.engine.fuel//space/xyz.malefic.compose.engin
 $dokka.location:xyz.malefic.compose.engine.fuel//text/xyz.malefic.compose.engine.fuel.fuel#kotlin.String/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/text.html
 $dokka.location:xyz.malefic.compose.engine.fuel//tooltip/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.Modifier#kotlin.Int#androidx.compose.foundation.TooltipPlacement#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/tooltip.html
 $dokka.location:xyz.malefic.compose.engine.fuel//width/xyz.malefic.compose.engine.fuel.fuel#androidx.compose.ui.unit.Dp#androidx.compose.ui.Modifier/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/width.html
+$dokka.location:xyz.malefic.compose.engine.fuel/WrapperComposable///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/-wrapper-composable/index.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel///PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/index.html
-$dokka.location:xyz.malefic.compose.engine.fuel/fuel/fuel/#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/fuel.html
+$dokka.location:xyz.malefic.compose.engine.fuel/fuel/factory/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/factory.html
+$dokka.location:xyz.malefic.compose.engine.fuel/fuel/fuel/#xyz.malefic.compose.engine.factory.ComposableFactory?#kotlin.Function0[kotlin.Unit]?/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/fuel.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/function/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/function.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/invoke/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/invoke.html
+$dokka.location:xyz.malefic.compose.engine.fuel/fuel/mod/#kotlin.Array[androidx.compose.ui.Modifier]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/mod.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/times/#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/times.html
 $dokka.location:xyz.malefic.compose.engine.fuel/fuel/timesAssign/#kotlin.Function1[xyz.malefic.compose.engine.fuel.fuel,kotlin.Unit]/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/times-assign.html
+$dokka.location:xyz.malefic.compose.engine.fuel/fuel/wrappers/#/PointingToDeclaration/-malefic-engine/xyz.malefic.compose.engine.fuel/fuel/wrappers.html
 xyz.malefic.compose.engine.factory
 xyz.malefic.compose.engine.fuel
