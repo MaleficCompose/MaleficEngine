@@ -1,7 +1,7 @@
 [versions]
 compose = "1.8.2"
 kotlin = "2.2.10"
-kotlinter = "5.0.2"
+kotlinter = "5.2.0"
 central = "1.2.8"
 dokka = "2.0.0"
 annotationJvm = "1.9.1"
